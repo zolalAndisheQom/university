@@ -43,6 +43,7 @@ btm.addEventListener("click",()=>{
                if (inputcode in user ) {   
                 alert("این کد دانشجویی قبلا ثبت نام کرده است. اگر رمز را فراموش کردید با پشتیبانی تماس بگیرید")
             }else{
+                document.getElementById("tk").value = "https://zolalandisheqom.github.io/university/thank.html?name="+`${document.getElementById("name").value}`
                 submit.click()
             }  
             }else{

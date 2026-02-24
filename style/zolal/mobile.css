@@ -9,7 +9,7 @@ header div{
     width: 20%;
 }
 header h1{
-    font-size: larger;
+    font-size: x-large;
 }
 .bod{
     padding: 0px;
@@ -39,8 +39,10 @@ header h1{
 }
 .audioDiv{
     flex-direction: column;
+    
     gap: 0px;
 }
+
 button{
     font-size: x-small;
     padding: 10px 14px;
@@ -65,4 +67,9 @@ form textarea{
 form p{
     font-size: xx-small;
     
+}
+@media (max-width:365px) {
+    audio{
+        scale: 0.9;
+    }
 }

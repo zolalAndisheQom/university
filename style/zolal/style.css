@@ -1,6 +1,11 @@
+@font-face {
+    font-family: nazanin;
+    src: url(../../front/B-NAZANIN.woff2);
+}
 *{
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: nazanin;
+    transition: 1s;
 }
 body{
     background-color: whitesmoke;
@@ -20,6 +25,7 @@ header{
 }
 header h1{
     cursor: default;
+    font-size: xxx-large;
 }
 header img{
     width: 10%;

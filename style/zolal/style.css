@@ -1,0 +1,235 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background-color: whitesmoke;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+header{
+    background-color: white;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 1.5em 1.5em;
+    box-shadow: 0 0 10px grey;
+}
+header h1{
+    cursor: default;
+}
+header img{
+    width: 10%;
+    border-radius: 1.5em;
+}
+header div{
+    display: flex; 
+    width: 15%;
+}
+header div img{ 
+    width: 50%;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 90%;
+    background-color: white;
+    box-shadow: 0 0 10px grey;
+    border-radius: 1em;
+
+}
+.bod{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+}
+a{
+    text-decoration-line: none;
+    color: gray;
+}
+a:hover{
+    color: black;
+}
+.chois{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 10px;
+    border: 2px solid silver;
+    width: 20em;
+    height: 4em;
+    background-color: gainsboro;
+    border-radius: 0.5em;
+}
+.chois h3{
+    z-index: 2;
+    transition: 1s;
+    margin: 0;
+    width: 40%;
+    cursor: pointer;
+    text-align: center;
+}
+.chois h3:hover{
+    z-index: 2;
+    transition: 1s;
+    transform: scale(1.1);
+    margin: 0;
+    width: 40%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.chois div{
+    transition: 1s;
+    position: absolute;
+    width: 40%;
+    height: 80%;
+    background-color: whitesmoke;
+    right: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px grey ;
+}
+.select{
+    transition: 1s;
+    transform: translate(-100%);
+}
+#teacher{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: fit-content;
+    width: 60%;
+    gap: 25px;
+    background-color: whitesmoke;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 3px;
+}
+.information{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0px;
+}
+.information h5{
+    cursor: default;
+    margin: 0;
+    width: 150px;
+    font-size: 15px;
+    text-align: right;
+}
+.information .titr{
+    font-size: 18px;
+}
+.audioDiv{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 20px;
+}
+audio{
+    height: 40px;
+}
+#sours{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    border-radius: 0;
+    gap: 10px;
+    box-shadow: 0 0 10px grey;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative;
+    width: 100%;
+    bottom:0;
+}
+footer h6{
+    margin: 0px;
+}
+form{
+    background-color: whitesmoke;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 10px ;
+    box-shadow: 0 0 10px grey;
+    margin-bottom: 30px;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+form button{
+    transition: 1s;
+    background-color: white;
+    border: 2px solid gainsboro;
+    border-radius: 7px;
+    height: max-content;
+    padding: 3px;
+}
+form button:hover{
+    transition: 1s;
+    background-color: gainsboro;
+    border: 2px solid black;
+    color: black;
+    border-radius: 10px;
+    height: max-content;
+    
+}
+textarea{
+    transition: 1s;
+    background-color: white;
+    border-radius: 3px;
+    text-align: right;
+    width:300px;
+    height: 100px;
+}
+textarea:focus{
+    transition: 1s;
+    background-color: snow;
+    border-radius: 8px;
+    text-align: right;
+    border: 1px solid black;
+    box-shadow: 0 0 10px grey;
+
+}
+#filediv div{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    gap: 10px;
+    align-items: center;
+}
+#filediv p{
+    color: blue;
+    margin: 0;
+
+}
+

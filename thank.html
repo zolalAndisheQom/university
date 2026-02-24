@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/zolal/style.css">
+    <link rel="stylesheet" href="style/por/style.css">
+    <title>تشکر</title>
+    <script >
+    </script>
+</head>
+<body style="align-items: center;">
+    <section id="sec" class="main">
+    </section>
+    <script>
+        const parmetr = new URLSearchParams(location.search)
+        const Name = parmetr.get("name")
+
+        const sect = document.getElementById("sec")
+        const h1 = document.createElement("h1")
+            h1.innerText = `سلام ${Name} عزیز👋🏻`
+            h1.style = "direction: rtl;"
+            sect.appendChild(h1)
+        const p = document.createElement("p")
+            p.innerText = "دوست من ممنون که وقت گذاشتی و این فرم رو پر کردی. انشاالله ما هم سعی میکنیم هرچه سریع نر  اکانت شمارا اضافه کنی.\n بدلیل طولانی بودن فرآیند صحت سنجی، این فرآیند ممکن است تا ۷۲ ساعت به طول انجامد\nبابت صبوری شما متشکر هستیم"
+            p.style = "direction: rtl;"
+            sect.appendChild(p)
+
+    </script>
+</body>
+</html>

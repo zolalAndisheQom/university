@@ -1,0 +1,68 @@
+header{
+    border-radius: 0.5em;
+}
+header img{
+    width: 15%;
+    border-radius: 0.5em;
+}
+header div{
+    width: 20%;
+}
+header h1{
+    font-size: larger;
+}
+.bod{
+    padding: 0px;
+}
+.chois{
+    width: 15em;
+    justify-content: space-evenly;
+}
+.chois h3{
+    font-size: medium;
+    width: 40%;
+}
+#select{
+    right: 3%;
+    width: 47%;
+    height: 90%;
+}
+#teacher {
+    width: 95%;
+}
+#teacher .titr{
+    font-size: small;
+}
+#teacher h5{
+    font-size: 11px;
+    width: 102px;
+}
+.audioDiv{
+    flex-direction: column;
+    gap: 0px;
+}
+button{
+    font-size: x-small;
+    padding: 10px 14px;
+    border-radius: 10px;
+    min-height: 40px;
+}
+.main h3{
+    font-size: medium;
+}
+form{
+    width: 90%;
+    gap: 10px;
+}
+form label{
+    font-size: small;
+}
+form textarea{
+    font-size: x-small;
+    width: 70%;
+    height: 66px;
+}
+form p{
+    font-size: xx-small;
+    
+}

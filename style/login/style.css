@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    transition: 1s;
+}
+body{
+    background-color: whitesmoke;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+header{
+    background-color: white;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 1.5em 1.5em;
+    box-shadow: 0 0 10px grey;
+}
+header h1{
+    cursor: default;
+}
+header img{
+    width: 10%;
+    border-radius: 1.5em;
+}
+header div{
+    display: flex; 
+    width: 15%;
+}
+header div img{ 
+    width: 50%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 30%;
+    background-color: white;
+    padding: 40px 30px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px grey;
+    
+}
+form h6{
+    margin: 0;
+}
+.input{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+    width: 90%;
+
+}
+label{
+    font-size: small;
+    position: absolute;
+    bottom: 10px;
+    margin: 0 auto;
+    color: grey;
+    height: min-content;
+    cursor: text;
+}
+.label{
+    font-size: x-small;
+    position: absolute;
+    top: -7px;
+    color: black;
+    right: 15px;    
+    background-color: white;
+    padding: 0px 3px;
+    border-radius: 50px;
+}
+input{
+border-radius: 8px;
+height: 40px;
+border: 1.5px solid grey;
+text-align: center;
+width: 100%;
+}
+input:focus{
+    border-color: gainsboro;
+    box-shadow: 0 5px 8px grey;
+}
+
+@media (max-width:500px) {
+    button{
+        font-size: x-small;
+        padding: 10px 14px;
+        border-radius: 10px;
+        min-height: 40px;
+    }
+    .label{
+        right: 15px;
+        font-size: xx-small;
+        top: -7px;
+    }
+    form{
+        width: 70%;
+    }
+    header{
+        border-radius: 0.5em;
+    }
+    header img{
+        width: 15%;
+        border-radius: 0.5em;
+    }
+    header div{
+        width: 20%;
+    }
+    header h1{
+        font-size: larger;
+    }
+}

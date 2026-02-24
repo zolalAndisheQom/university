@@ -39,11 +39,12 @@ btm.addEventListener("click",()=>{
     console.log("ok")
     if (inputPass.value === inputPassage.value && inputPass !== "") {
         if (inputcode.value.length === 11) {
-            if (inputPass.value.length>8) {
+            if (inputPass.value.length>7) {
                if (inputcode in user ) {   
                 alert("این کد دانشجویی قبلا ثبت نام کرده است. اگر رمز را فراموش کردید با پشتیبانی تماس بگیرید")
             }else{
                 document.getElementById("tk").value = "https://zolalandisheqom.github.io/university/thank.html?name="+inputname.value
+                submit.click()
             }  
             }else{
                 alert("رمز عبور باید حداقل 8 نویسه داشته باشد")

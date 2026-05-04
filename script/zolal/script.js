@@ -1,6 +1,7 @@
 
 let src = audio_safari
 default_teacher = "Safari"
+document.getElementById("Andishe").classList.add("active")
 function informatino(dick) {
     const informatino_tag = document.getElementById("teacher")
     informatino_tag.innerHTML = ""
@@ -49,8 +50,8 @@ function loadFile(id) {
 
 document.getElementById("Garyan").addEventListener("click",()=>{
     document.getElementById("select").className = "select"
-    document.getElementById("Andishe").style = "color: grey"
-    document.getElementById("Garyan").style = "color: black"
+    document.getElementById("Andishe").classList.remove("active")
+    document.getElementById("Garyan").classList.add("active")
     document.getElementById("load").style = ""
     document.getElementById("sours").innerHTML =""
     default_teacher = "Taheri"
@@ -61,8 +62,8 @@ document.getElementById("Garyan").addEventListener("click",()=>{
 
 document.getElementById("Andishe").addEventListener("click",()=>{
     document.getElementById("select").className = ""
-    document.getElementById("Garyan").style = "color: grey"
-    document.getElementById("Andishe").style = "color: black"
+    document.getElementById("Andishe").classList.add("active")
+    document.getElementById("Garyan").classList.remove("active")
     document.getElementById("load").style = ""
     document.getElementById("sours").innerHTML =""
     default_teacher = "Safari"

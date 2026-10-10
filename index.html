@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="./style/login/style.css">
 
     <style>
         :root {
@@ -32,25 +31,39 @@
             padding: 0;
         }
 
+        html {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: clip;
+        }
+
         body {
+            width: 100%;
+            max-width: 100%;
+            min-height: 100vh;
+            overflow-x: clip;
             font-family: 'Vazirmatn', Tahoma, sans-serif;
             background: var(--background);
             color: var(--text);
-            min-height: 100vh;
             line-height: 1.8;
         }
 
-        /* سربرگ */
+        img {
+            max-width: 100%;
+        }
+
+        /* سربرگ آبی */
 
         .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 24px;
+            gap: 20px;
+            width: 100%;
             padding: 20px 5%;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-            box-shadow: 0 3px 15px rgba(29, 78, 130, 0.04);
+            background: linear-gradient(135deg, #104b80, #1769aa);
+            color: var(--white);
+            box-shadow: 0 4px 18px rgba(16, 75, 128, 0.18);
         }
 
         .leader-img {
@@ -62,36 +75,41 @@
 
         .header h1 {
             flex: 1;
-            font-size: clamp(17px, 2vw, 25px);
+            min-width: 0;
+            font-size: clamp(16px, 2vw, 25px);
             font-weight: 800;
-            color: var(--primary-dark);
             text-align: center;
+            overflow-wrap: anywhere;
         }
 
         .header-logos {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             flex-shrink: 0;
         }
 
         .header-logos img {
-            width: 58px;
-            height: 58px;
+            width: 56px;
+            height: 56px;
             object-fit: contain;
         }
 
         /* محتوای اصلی */
 
         .container {
+            width: 100%;
             max-width: 1200px;
-            margin: 45px auto;
+            min-width: 0;
+            margin: 40px auto;
             padding: 0 24px;
         }
 
-        /* کارت */
+        /* کارت اصلی */
 
         .card {
+            width: 100%;
+            min-width: 0;
             background: var(--white);
             border: 1px solid var(--border);
             border-radius: 18px;
@@ -101,52 +119,64 @@
 
         .card-header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             gap: 15px;
             padding: 25px 30px;
-            border-bottom: 1px solid var(--border);
-            background: linear-gradient(135deg, #ffffff, #f5faff);
+            background: linear-gradient(135deg, #1769aa, #104b80);
+            color: var(--white);
+        }
+
+        .card-header > div {
+            min-width: 0;
         }
 
         .card-header h2 {
             font-size: 21px;
             font-weight: 800;
-            color: var(--primary-dark);
+            overflow-wrap: anywhere;
         }
 
         .card-header p {
             margin-top: 5px;
             font-size: 13px;
-            color: var(--muted);
+            color: #e1efff;
         }
 
         .count {
+            flex-shrink: 0;
             white-space: nowrap;
-            background: var(--primary-light);
-            color: var(--primary);
-            border: 1px solid #d3e7ff;
-            border-radius: 10px;
             padding: 7px 14px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.14);
+            color: var(--white);
             font-size: 13px;
             font-weight: 700;
         }
 
-        /* جدول */
+        /* فقط این قسمت اجازه اسکرول افقی دارد */
 
         .table-wrapper {
+            display: block;
             width: 100%;
+            max-width: 100%;
+            min-width: 0;
             overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-x: contain;
         }
 
         table {
             width: 100%;
+            min-width: 600px;
             border-collapse: collapse;
             text-align: right;
         }
 
         thead {
-            background: #f0f6fd;
+            background: #eaf4ff;
         }
 
         th {
@@ -168,25 +198,31 @@
             transition: background 0.2s ease;
         }
 
-        tbody tr:hover {
-            background: #f7fbff;
+        tbody tr:nth-child(even) {
+            background: #fbfdff;
         }
 
-        .row-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 34px;
-            height: 34px;
-            background: #edf5ff;
-            color: var(--primary);
-            border-radius: 10px;
-            font-weight: 700;
+        tbody tr.clickable-row {
+            cursor: pointer;
+        }
+
+        tbody tr.clickable-row:hover {
+            background: #eaf4ff;
+        }
+
+        tbody tr.clickable-row:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: -3px;
+        }
+
+        tbody tr.clickable-row:active {
+            background: #dcecff;
         }
 
         .term-name {
             font-weight: 700;
-            color: var(--text);
+            color: var(--primary-dark);
+            white-space: nowrap;
         }
 
         .year-badge {
@@ -214,6 +250,7 @@
             border-radius: 9px;
             background: #f8fbff;
             line-height: 1.9;
+            overflow-wrap: anywhere;
         }
 
         .course-item::before {
@@ -233,71 +270,103 @@
             color: var(--muted);
         }
 
-        /* نمایش در موبایل */
+        /* موبایل */
 
         @media (max-width: 650px) {
             .header {
-                padding: 15px 12px;
                 gap: 8px;
+                padding: 15px 10px;
             }
 
             .leader-img {
-                width: 42px;
-                height: 42px;
+                width: 38px;
+                height: 38px;
             }
 
             .header h1 {
-                font-size: 14px;
+                font-size: 13px;
                 line-height: 1.7;
             }
 
             .header-logos {
-                gap: 5px;
+                gap: 4px;
             }
 
             .header-logos img {
-                width: 32px;
-                height: 32px;
+                width: 30px;
+                height: 30px;
             }
 
             .container {
-                margin: 25px auto;
-                padding: 0 12px;
+                margin: 24px auto;
+                padding: 0 10px;
+            }
+
+            .card {
+                border-radius: 13px;
             }
 
             .card-header {
-                padding: 20px 15px;
+                padding: 18px 13px;
+                gap: 8px;
             }
 
             .card-header h2 {
-                font-size: 17px;
+                font-size: 16px;
             }
 
             .card-header p {
-                font-size: 12px;
+                font-size: 11px;
+                line-height: 1.8;
             }
 
             .count {
-                padding: 6px 9px;
+                padding: 5px 8px;
                 font-size: 11px;
             }
 
             th,
             td {
-                padding: 14px 12px;
-            }
-
-            th,
-            td {
+                padding: 13px 12px;
                 font-size: 12px;
             }
 
             .courses {
-                min-width: 220px;
+                min-width: 230px;
             }
 
             .course-item {
                 padding: 8px 27px 8px 10px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .header {
+                gap: 5px;
+                padding: 12px 7px;
+            }
+
+            .leader-img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .header h1 {
+                font-size: 11px;
+            }
+
+            .header-logos img {
+                width: 25px;
+                height: 25px;
+            }
+
+            .card-header h2 {
+                font-size: 14px;
+            }
+
+            .count {
+                font-size: 10px;
+                padding: 4px 6px;
             }
         }
     </style>
@@ -320,7 +389,7 @@
         <div class="header-logos">
             <img
                 src="photo/nahad-logo.png"
-                alt="لوگوی نهاد نمایندگی مقام معظم رهبری"
+                alt="لوگوی نهاد"
             >
 
             <img
@@ -338,22 +407,19 @@
         <section class="card">
 
             <div class="card-header">
-
                 <div>
-                    <h2>ترم‌های تحصیلی و دروس ارائه‌شده</h2>
-                    <p>فهرست ترم‌ها و درس‌های مجموعه زلال اندیشه</p>
+                    <h2>ترم‌ها و دروس ارائه‌شده</h2>
+                    <p>برای ورود به صفحه هر ترم، روی سطر آن کلیک کنید.</p>
                 </div>
 
-                <span class="count" id="term-count">
-                    ۰ ترم
-                </span>
-
+                <span class="count" id="term-count">۰ ترم</span>
             </div>
+
+            <!-- اسکرول افقی فقط در این بخش -->
 
             <div class="table-wrapper">
 
                 <table>
-
                     <thead>
                         <tr>
                             <th scope="col">ترم تحصیلی</th>
@@ -362,9 +428,7 @@
                         </tr>
                     </thead>
 
-                    <tbody id="users-body">
-                    </tbody>
-
+                    <tbody id="users-body"></tbody>
                 </table>
 
             </div>
@@ -374,8 +438,10 @@
     </main>
 
     <script>
-        // اطلاعات ترم‌ها
-        // هر ترم شامل نام ترم، سال و آرایه‌ای از درس‌هاست.
+        /*
+         * اطلاعات هر ترم را از اینجا تغییر بده.
+         * لینک هر ترم در ویژگی link قرار می‌گیرد.
+         */
 
         const array = [
             {
@@ -384,7 +450,8 @@
                 courses: [
                     "طرح کلی اندیشه اسلامی",
                     "جریان‌شناسی سیاسی معاصر ایران"
-                ]
+                ],
+                link: "https://example.com/winter-1404"
             },
             {
                 term: "ترم پاییز",
@@ -392,77 +459,83 @@
                 courses: [
                     "بررسی تطبیقی حکومت اسلامی با حکومت‌های شبه‌اسلامی و سکولار",
                     "جاهلیت مدرن و کلاسیک با رویکرد اخلاق اسلامی"
-                ]
+                ],
+                link: "https://example.com/fall-1405"
             }
         ];
 
         const usersBody = document.querySelector("#users-body");
         const termCount = document.querySelector("#term-count");
 
-        // پاک‌سازی جدول
-        usersBody.replaceChildren();
-
-        // نمایش تعداد ترم‌ها
-        const persianNumber = (number) =>
-            number.toLocaleString("fa-IR");
-
         termCount.textContent =
-            `${persianNumber(array.length)} ترم`;
+            `${array.length.toLocaleString("fa-IR")} ترم`;
 
-        // ساخت ردیف‌های جدول
-        array.forEach((item, index) => {
-
+        array.forEach((item) => {
             const row = document.createElement("tr");
 
             // نام ترم
             const termCell = document.createElement("td");
+            const termName = document.createElement("span");
 
-            const termContent = document.createElement("span");
-            termContent.className = "term-name";
-            termContent.textContent = item.term;
+            termName.className = "term-name";
+            termName.textContent = item.term;
+            termCell.appendChild(termName);
 
-            termCell.appendChild(termContent);
-
-            // سال تحصیلی
+            // سال
             const yearCell = document.createElement("td");
-
             const yearBadge = document.createElement("span");
+
             yearBadge.className = "year-badge";
             yearBadge.textContent = item.year;
-
             yearCell.appendChild(yearBadge);
 
-            // فهرست دروس
+            // دروس
             const coursesCell = document.createElement("td");
-
             const coursesContainer = document.createElement("div");
+
             coursesContainer.className = "courses";
 
             item.courses.forEach((course) => {
-
                 const courseElement = document.createElement("div");
+
                 courseElement.className = "course-item";
                 courseElement.textContent = course;
 
                 coursesContainer.appendChild(courseElement);
-
             });
 
             coursesCell.appendChild(coursesContainer);
 
-            // افزودن ستون‌ها به ردیف
-            row.appendChild(termCell);
-            row.appendChild(yearCell);
-            row.appendChild(coursesCell);
+            // افزودن ستون‌ها به سطر
+            row.append(termCell, yearCell, coursesCell);
 
-            // افزودن ردیف به جدول
+            // کلیک روی کل سطر
+            if (item.link) {
+                row.classList.add("clickable-row");
+                row.tabIndex = 0;
+                row.setAttribute("role", "link");
+                row.setAttribute(
+                    "aria-label",
+                    `مشاهده ${item.term} ${item.year}`
+                );
+
+                row.addEventListener("click", () => {
+                    window.location.href = item.link;
+                });
+
+                row.addEventListener("keydown", (event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        window.location.href = item.link;
+                    }
+                });
+            }
+
             usersBody.appendChild(row);
-
         });
 
-        // نمایش پیام در صورت نبود اطلاعات
+        // پیام در صورت نبود ترم
         if (array.length === 0) {
-
             const row = document.createElement("tr");
             const cell = document.createElement("td");
 
@@ -472,7 +545,6 @@
 
             row.appendChild(cell);
             usersBody.appendChild(row);
-
         }
     </script>
 

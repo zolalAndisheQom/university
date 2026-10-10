@@ -265,7 +265,7 @@ td {
 ```
 
 }
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style/login/style.css">
     </style>
     <title>welcom</title>
 </head>
@@ -329,21 +329,12 @@ td {
 
         array.forEach((item) => {
             const row = document.createElement("tr");
-            row.innerHTML = '
-
-                        <td>
-                            item[0]
-                        </td>
-
-                        <td>
-                            item[1]
-                        </td>
-
-                        <td>
-                           item[2]
-                        </td>
-
-                    ';
+           array.forEach((iteem) => {
+            
+               row.innerHTML = '<th>iteem</th>'
+           
+        }); 
+           
         });
     </script>
 </body>

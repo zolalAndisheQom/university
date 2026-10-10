@@ -1,327 +1,643 @@
-/* =========================
-   Root Colors (Theme)
-========================= */
+/* ========================================
+
+1. تعریف فونت B Nazanin
+   ======================================== */
+
+@font-face {
+font-family: 'B Nazanin';
+src: url('../../front/B-NAZANIN.woff2') format('woff2');
+font-weight: 400;
+font-style: normal;
+font-display: swap;
+}
+
+@font-face {
+font-family: 'B Nazanin';
+src: url('../../front/B-NAZANIN.woff2') format('woff2');
+font-weight: 700;
+font-style: normal;
+font-display: swap;
+}
+
+/* ========================================
+2. رنگ‌بندی اصلی
+======================================== */
 
 :root {
-    --primary:   #1E3A8A;
-    --secondary: #3B82F6;
-    --bg-main:   #F8FAFC;
-    --card-bg:   #FFFFFF;
-    --border:    #E5E7EB;
-    --success:   #10B981;
-    --warning:   #F59E0B;
-    --text-main: #1F2937;
-    --text-soft: #6B7280;
-   --primary: #1769aa;
-            --primary-dark: #104b80;
-            --primary-light: #eaf4ff;
-            --background: #f3f7fc;
-            --white: #ffffff;
-            --text: #24364b;
-            --muted: #74859a;
-            --border: #e2eaf3;
-            --shadow: 0 8px 30px rgba(29, 78, 130, 0.08);
+/* هدر */
+--header-primary: #1E3A8A;
+--header-text: #FFFFFF;
+
+```
+/* محتوای اصلی */
+--primary: #1769AA;
+--primary-dark: #104B80;
+--primary-light: #EAF4FF;
+
+--background: #F3F7FC;
+--white: #FFFFFF;
+
+--border: #E2EAF3;
+--success: #10B981;
+--warning: #F59E0B;
+
+--text: #24364B;
+--muted: #74859A;
+
+--shadow: 0 8px 30px rgba(29, 78, 130, 0.08);
+
+--header-height: 76px;
+```
+
+}
+
+/* ========================================
+3. تنظیمات عمومی
+======================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  font-family: 'B Nazanin', Tahoma, sans-serif;
   }
-  
-  /* =========================
-     Global
-  ========================= */
-  
-  body {
-    margin: 0;
-    background: var(--bg-main);
-    font-family: Vazirmatn, IRANSans, system-ui, sans-serif;
-    color: var(--text-main);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* =========================
-     Header
-  ========================= */
-  
-  header {
-    width: 100%;
-    background: var(--primary);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 18px;
-    border-radius: 0 0 18px 18px;
-    box-shadow: 0 4px 12px rgba(0,0,0,.08);
-  }
-  
-  header img {
-    height: 48px;
-  }
-  
-  header h1 {
+
+html {
+width: 100%;
+max-width: 100%;
+overflow-x: clip;
+}
+
+body {
+width: 100%;
+max-width: 100%;
+min-height: 100vh;
+
+```
+background: var(--background);
+color: var(--text);
+
+font-size: 18px;
+line-height: 1.8;
+
+overflow-x: clip;
+```
+
+}
+
+/* ========================================
+4. هدر اصلی
+======================================== */
+
+header {
+width: 100%;
+min-height: var(--header-height);
+
+```
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+gap: 20px;
+padding: 10px 24px;
+
+background: var(--header-primary);
+color: var(--header-text);
+
+border-radius: 0 0 18px 18px;
+
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+```
+
+}
+
+/* تصویر سمت چپ هدر */
+
+header > img {
+height: 56px;
+width: auto;
+max-width: 20%;
+
+```
+flex-shrink: 0;
+
+object-fit: contain;
+```
+
+}
+
+/* عنوان هدر */
+
+header h1 {
+flex: 1;
+min-width: 0;
+
+```
+font-size: clamp(20px, 2.5vw, 30px);
+font-weight: 700;
+
+line-height: 1.6;
+text-align: center;
+
+overflow-wrap: anywhere;
+```
+
+}
+
+/* محفظه لوگوها */
+
+header > div {
+height: 56px;
+
+```
+display: flex;
+align-items: center;
+justify-content: flex-end;
+
+gap: 12px;
+
+flex-shrink: 0;
+```
+
+}
+
+/* لوگوهای هدر */
+
+header > div img {
+height: 100%;
+width: auto;
+max-width: 75px;
+
+```
+object-fit: contain;
+```
+
+}
+
+/* ========================================
+5. محتوای اصلی
+======================================== */
+
+.container {
+width: 100%;
+max-width: 1200px;
+min-width: 0;
+
+```
+margin: 40px auto;
+padding: 0 24px;
+```
+
+}
+
+/* ========================================
+6. کارت اصلی
+======================================== */
+
+.card {
+width: 100%;
+min-width: 0;
+
+```
+background: var(--white);
+
+border: 1px solid var(--border);
+border-radius: 18px;
+
+overflow: hidden;
+
+box-shadow: var(--shadow);
+```
+
+}
+
+/* ========================================
+7. سربرگ کارت
+======================================== */
+
+.card-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+```
+gap: 15px;
+padding: 25px 30px;
+
+background: linear-gradient(
+    135deg,
+    #1769AA,
+    #104B80
+);
+
+color: var(--white);
+```
+
+}
+
+.card-header > div {
+min-width: 0;
+}
+
+.card-header h2 {
+font-size: 26px;
+font-weight: 700;
+
+```
+overflow-wrap: anywhere;
+```
+
+}
+
+.card-header p {
+margin-top: 5px;
+
+```
+font-size: 18px;
+color: #E1EFFF;
+```
+
+}
+
+.count {
+flex-shrink: 0;
+white-space: nowrap;
+
+```
+padding: 7px 14px;
+
+border: 1px solid rgba(255, 255, 255, 0.4);
+border-radius: 10px;
+
+background: rgba(255, 255, 255, 0.14);
+
+color: var(--white);
+font-size: 18px;
+font-weight: 700;
+```
+
+}
+
+/* ========================================
+8. جدول
+======================================== */
+
+.table-wrapper {
+display: block;
+
+```
+width: 100%;
+max-width: 100%;
+min-width: 0;
+
+overflow-x: auto;
+overflow-y: hidden;
+
+-webkit-overflow-scrolling: touch;
+overscroll-behavior-x: contain;
+```
+
+}
+
+table {
+width: 100%;
+min-width: 600px;
+
+```
+border-collapse: collapse;
+text-align: right;
+```
+
+}
+
+thead {
+background: #EAF4FF;
+}
+
+th {
+padding: 17px 22px;
+
+```
+font-size: 20px;
+font-weight: 700;
+
+color: var(--primary-dark);
+white-space: nowrap;
+```
+
+}
+
+td {
+padding: 20px 22px;
+
+```
+border-top: 1px solid var(--border);
+
+font-size: 19px;
+vertical-align: middle;
+```
+
+}
+
+tbody tr {
+transition: background 0.2s ease;
+}
+
+tbody tr:nth-child(even) {
+background: #FBFDFF;
+}
+
+tbody tr.clickable-row {
+cursor: pointer;
+}
+
+tbody tr.clickable-row:hover {
+background: #EAF4FF;
+}
+
+tbody tr.clickable-row:focus-visible {
+outline: 3px solid var(--primary);
+outline-offset: -3px;
+}
+
+tbody tr.clickable-row:active {
+background: #DCECFF;
+}
+
+/* ========================================
+9. اطلاعات ترم و سال
+======================================== */
+
+.term-name {
+font-weight: 700;
+color: var(--primary-dark);
+
+```
+white-space: nowrap;
+```
+
+}
+
+.year-badge {
+display: inline-block;
+
+```
+padding: 5px 12px;
+
+border-radius: 8px;
+
+background: #E8F7F0;
+color: #16865B;
+
+font-size: 18px;
+font-weight: 700;
+
+white-space: nowrap;
+```
+
+}
+
+/* ========================================
+10. دروس
+======================================== */
+
+.courses {
+display: flex;
+flex-direction: column;
+
+```
+gap: 9px;
+
+min-width: 250px;
+```
+
+}
+
+.course-item {
+position: relative;
+
+```
+padding: 10px 30px 10px 14px;
+
+border: 1px solid #E2EDFA;
+border-radius: 9px;
+
+background: #F8FBFF;
+
+font-size: 19px;
+line-height: 1.9;
+
+overflow-wrap: anywhere;
+```
+
+}
+
+.course-item::before {
+content: "";
+
+```
+position: absolute;
+
+right: 12px;
+top: 19px;
+
+width: 6px;
+height: 6px;
+
+border-radius: 50%;
+
+background: var(--primary);
+```
+
+}
+
+.empty-message {
+padding: 30px;
+
+```
+text-align: center;
+color: var(--muted);
+```
+
+}
+
+/* ========================================
+11. تبلت و نمایشگرهای متوسط
+======================================== */
+
+@media (max-width: 900px) {
+
+```
+:root {
+    --header-height: 68px;
+}
+
+header {
+    gap: 14px;
+    padding: 8px 18px;
+}
+
+header > img {
+    height: 50px;
+}
+
+header > div {
+    height: 50px;
+    gap: 8px;
+}
+
+header > div img {
+    max-width: 60px;
+}
+
+header h1 {
+    font-size: clamp(18px, 3vw, 25px);
+}
+
+.container {
+    margin: 30px auto;
+}
+
+.card-header h2 {
+    font-size: 23px;
+}
+
+th {
+    font-size: 19px;
+}
+
+td {
     font-size: 18px;
-    margin: 0;
-    font-weight: 600;
-  }
-  
+}
+```
 
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+/* ========================================
+12. موبایل
+======================================== */
 
-        html {
-            width: 100%;
-            max-width: 100%;
-            overflow-x: clip;
-        }
+@media (max-width: 650px) {
 
-        body {
-            width: 100%;
-            max-width: 100%;
-            min-height: 100vh;
-            overflow-x: clip;
-            font-family: 'Vazirmatn', Tahoma, sans-serif;
-            background: var(--background);
-            color: var(--text);
-            line-height: 1.8;
-        }
+```
+:root {
+    --header-height: 60px;
+}
 
+header {
+    gap: 8px;
+    padding: 7px 12px;
 
-        /* محتوای اصلی */
+    border-radius: 0 0 12px 12px;
+}
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            min-width: 0;
-            margin: 40px auto;
-            padding: 0 24px;
-        }
+header > img {
+    height: 44px;
+    max-width: 18%;
+}
 
-        /* کارت اصلی */
+header > div {
+    height: 44px;
+    gap: 5px;
+}
 
-        .card {
-            width: 100%;
-            min-width: 0;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
+header > div img {
+    max-width: 42px;
+}
 
-        .card-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-            padding: 25px 30px;
-            background: linear-gradient(135deg, #1769aa, #104b80);
-            color: var(--white);
-        }
+header h1 {
+    font-size: clamp(15px, 3.5vw, 21px);
+    line-height: 1.5;
+}
 
-        .card-header > div {
-            min-width: 0;
-        }
+.container {
+    margin: 24px auto;
+    padding: 0 10px;
+}
 
-        .card-header h2 {
-            font-size: 21px;
-            font-weight: 800;
-            overflow-wrap: anywhere;
-        }
+.card {
+    border-radius: 13px;
+}
 
-        .card-header p {
-            margin-top: 5px;
-            font-size: 13px;
-            color: #e1efff;
-        }
+.card-header {
+    padding: 18px 13px;
+    gap: 8px;
+}
 
-        .count {
-            flex-shrink: 0;
-            white-space: nowrap;
-            padding: 7px 14px;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.14);
-            color: var(--white);
-            font-size: 13px;
-            font-weight: 700;
-        }
+.card-header h2 {
+    font-size: 20px;
+}
 
-        /* فقط این قسمت اجازه اسکرول افقی دارد */
+.card-header p {
+    font-size: 16px;
+    line-height: 1.8;
+}
 
-        .table-wrapper {
-            display: block;
-            width: 100%;
-            max-width: 100%;
-            min-width: 0;
-            overflow-x: auto;
-            overflow-y: hidden;
-            -webkit-overflow-scrolling: touch;
-            overscroll-behavior-x: contain;
-        }
+.count {
+    padding: 5px 8px;
+    font-size: 16px;
+}
 
-        table {
-            width: 100%;
-            min-width: 600px;
-            border-collapse: collapse;
-            text-align: right;
-        }
+th,
+td {
+    padding: 13px 12px;
+    font-size: 16px;
+}
 
-        thead {
-            background: #eaf4ff;
-        }
+.courses {
+    min-width: 230px;
+}
 
-        th {
-            padding: 17px 22px;
-            font-size: 13px;
-            font-weight: 800;
-            color: var(--primary-dark);
-            white-space: nowrap;
-        }
+.course-item {
+    padding: 8px 27px 8px 10px;
+    font-size: 16px;
+}
 
-        td {
-            padding: 20px 22px;
-            border-top: 1px solid var(--border);
-            font-size: 14px;
-            vertical-align: middle;
-        }
+.year-badge {
+    font-size: 16px;
+}
+```
 
-        tbody tr {
-            transition: background 0.2s ease;
-        }
+}
 
-        tbody tr:nth-child(even) {
-            background: #fbfdff;
-        }
+/* ========================================
+13. موبایل‌های کوچک
+======================================== */
 
-        tbody tr.clickable-row {
-            cursor: pointer;
-        }
+@media (max-width: 380px) {
 
-        tbody tr.clickable-row:hover {
-            background: #eaf4ff;
-        }
+```
+header {
+    gap: 5px;
+    padding: 6px 8px;
+}
 
-        tbody tr.clickable-row:focus-visible {
-            outline: 3px solid var(--primary);
-            outline-offset: -3px;
-        }
+header > img {
+    height: 38px;
+}
 
-        tbody tr.clickable-row:active {
-            background: #dcecff;
-        }
+header > div {
+    height: 38px;
+    gap: 3px;
+}
 
-        .term-name {
-            font-weight: 700;
-            color: var(--primary-dark);
-            white-space: nowrap;
-        }
+header > div img {
+    max-width: 34px;
+}
 
-        .year-badge {
-            display: inline-block;
-            padding: 5px 12px;
-            border-radius: 8px;
-            background: #e8f7f0;
-            color: #16865b;
-            font-size: 13px;
-            font-weight: 700;
-            white-space: nowrap;
-        }
+header h1 {
+    font-size: clamp(13px, 3.4vw, 16px);
+}
 
-        .courses {
-            display: flex;
-            flex-direction: column;
-            gap: 9px;
-            min-width: 250px;
-        }
+.card-header h2 {
+    font-size: 18px;
+}
 
-        .course-item {
-            position: relative;
-            padding: 10px 30px 10px 14px;
-            border: 1px solid #e2edfa;
-            border-radius: 9px;
-            background: #f8fbff;
-            line-height: 1.9;
-            overflow-wrap: anywhere;
-        }
+.count {
+    font-size: 14px;
+    padding: 4px 6px;
+}
+```
 
-        .course-item::before {
-            content: "";
-            position: absolute;
-            right: 12px;
-            top: 19px;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--primary);
-        }
-
-        .empty-message {
-            padding: 30px;
-            text-align: center;
-            color: var(--muted);
-        }
-
-        /* موبایل */
-
-        @media (max-width: 650px) {
-
-            .container {
-                margin: 24px auto;
-                padding: 0 10px;
-            }
-
-            .card {
-                border-radius: 13px;
-            }
-
-            .card-header {
-                padding: 18px 13px;
-                gap: 8px;
-            }
-
-            .card-header h2 {
-                font-size: 16px;
-            }
-
-            .card-header p {
-                font-size: 11px;
-                line-height: 1.8;
-            }
-
-            .count {
-                padding: 5px 8px;
-                font-size: 11px;
-            }
-
-            th,
-            td {
-                padding: 13px 12px;
-                font-size: 12px;
-            }
-
-            .courses {
-                min-width: 230px;
-            }
-
-            .course-item {
-                padding: 8px 27px 8px 10px;
-            }
-        }
-
-        @media (max-width: 360px) {
-
-
-            .card-header h2 {
-                font-size: 14px;
-            }
-
-            .count {
-                font-size: 10px;
-                padding: 4px 6px;
-            }
-        }
-  
+}

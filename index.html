@@ -1,341 +1,480 @@
+
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>زلال اندیشه | دروس ارائه‌شده</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style/login/style.css">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+        :root {
+            --primary: #1769aa;
+            --primary-dark: #104b80;
+            --primary-light: #eaf4ff;
+            --background: #f3f7fc;
+            --white: #ffffff;
+            --text: #24364b;
+            --muted: #74859a;
+            --border: #e2eaf3;
+            --shadow: 0 8px 30px rgba(29, 78, 130, 0.08);
+        }
 
-:root {
---primary: #1769aa;
---primary-dark: #104b80;
---primary-light: #eaf4ff;
---background: #f3f7fc;
---white: #ffffff;
---text: #24364b;
---muted: #74859a;
---border: #e2eaf3;
---shadow: 0 8px 30px rgba(29, 78, 130, 0.08);
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  }
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.8;
+        }
 
-body {
-font-family: 'Vazirmatn', Tahoma, sans-serif;
-background: var(--background);
-color: var(--text);
-min-height: 100vh;
-line-height: 1.8;
-}
+        /* سربرگ */
 
-/* سربرگ */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 20px 5%;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 3px 15px rgba(29, 78, 130, 0.04);
+        }
 
-.header {
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 24px;
-padding: 20px 5%;
-background: var(--white);
-border-bottom: 1px solid var(--border);
-box-shadow: 0 3px 15px rgba(29, 78, 130, 0.04);
-}
+        .leader-img {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
 
-.leader-img {
-width: 65px;
-height: 65px;
-object-fit: contain;
-}
+        .header h1 {
+            flex: 1;
+            font-size: clamp(17px, 2vw, 25px);
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-align: center;
+        }
 
-.header h1 {
-font-size: clamp(17px, 2vw, 25px);
-font-weight: 800;
-color: var(--primary-dark);
-text-align: center;
-}
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-shrink: 0;
+        }
 
-.header-logos {
-display: flex;
-align-items: center;
-gap: 15px;
-}
+        .header-logos img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+        }
 
-.header-logos img {
-width: 58px;
-height: 58px;
-object-fit: contain;
-}
+        /* محتوای اصلی */
 
-/* محتوای اصلی */
+        .container {
+            max-width: 1200px;
+            margin: 45px auto;
+            padding: 0 24px;
+        }
 
-.container {
-max-width: 1200px;
-margin: 45px auto;
-padding: 0 24px;
-}
+        /* کارت */
 
-/* کارت */
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
 
-.card {
-background: var(--white);
-border: 1px solid var(--border);
-border-radius: 18px;
-overflow: hidden;
-box-shadow: var(--shadow);
-}
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            padding: 25px 30px;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(135deg, #ffffff, #f5faff);
+        }
 
-.card-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-gap: 15px;
-padding: 25px 30px;
-border-bottom: 1px solid var(--border);
-background: linear-gradient(135deg, #ffffff, #f5faff);
-}
+        .card-header h2 {
+            font-size: 21px;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
 
-.card-header h2 {
-font-size: 21px;
-font-weight: 800;
-color: var(--primary-dark);
-}
+        .card-header p {
+            margin-top: 5px;
+            font-size: 13px;
+            color: var(--muted);
+        }
 
-.card-header p {
-margin-top: 5px;
-font-size: 13px;
-color: var(--muted);
-}
+        .count {
+            white-space: nowrap;
+            background: var(--primary-light);
+            color: var(--primary);
+            border: 1px solid #d3e7ff;
+            border-radius: 10px;
+            padding: 7px 14px;
+            font-size: 13px;
+            font-weight: 700;
+        }
 
-.count {
-white-space: nowrap;
-background: var(--primary-light);
-color: var(--primary);
-border: 1px solid #d3e7ff;
-border-radius: 10px;
-padding: 7px 14px;
-font-size: 13px;
-font-weight: 700;
-}
+        /* جدول */
 
-/* جدول */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
 
-.table-wrapper {
-width: 100%;
-overflow-x: auto;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+        }
 
-table {
-width: 100%;
-border-collapse: collapse;
-text-align: right;
-}
+        thead {
+            background: #f0f6fd;
+        }
 
-thead {
-background: #f0f6fd;
-}
+        th {
+            padding: 17px 22px;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            white-space: nowrap;
+        }
 
-th {
-padding: 17px 22px;
-font-size: 13px;
-font-weight: 800;
-color: var(--primary-dark);
-white-space: nowrap;
-}
+        td {
+            padding: 20px 22px;
+            border-top: 1px solid var(--border);
+            font-size: 14px;
+            vertical-align: middle;
+        }
 
-td {
-padding: 20px 22px;
-border-top: 1px solid var(--border);
-font-size: 14px;
-vertical-align: middle;
-}
+        tbody tr {
+            transition: background 0.2s ease;
+        }
 
-tbody tr {
-transition: background 0.2s ease;
-}
+        tbody tr:hover {
+            background: #f7fbff;
+        }
 
-tbody tr:hover {
-background: #f7fbff;
-}
+        .row-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            background: #edf5ff;
+            color: var(--primary);
+            border-radius: 10px;
+            font-weight: 700;
+        }
 
-.row-number {
-display: inline-flex;
-align-items: center;
-justify-content: center;
-width: 34px;
-height: 34px;
-background: #edf5ff;
-color: var(--primary);
-border-radius: 10px;
-font-weight: 700;
-}
+        .term-name {
+            font-weight: 700;
+            color: var(--text);
+        }
 
-.term-name {
-font-weight: 700;
-color: var(--text);
-}
+        .year-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 8px;
+            background: #e8f7f0;
+            color: #16865b;
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
 
-.year-badge {
-display: inline-block;
-padding: 5px 12px;
-border-radius: 8px;
-background: #e8f7f0;
-color: #16865b;
-font-size: 13px;
-font-weight: 700;
-white-space: nowrap;
-}
+        .courses {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            min-width: 250px;
+        }
 
-.courses {
-display: flex;
-flex-direction: column;
-gap: 9px;
-min-width: 250px;
-}
+        .course-item {
+            position: relative;
+            padding: 10px 30px 10px 14px;
+            border: 1px solid #e2edfa;
+            border-radius: 9px;
+            background: #f8fbff;
+            line-height: 1.9;
+        }
 
-.course-item {
-position: relative;
-padding: 10px 14px;
-padding-right: 27px;
-border: 1px solid #e2edfa;
-border-radius: 9px;
-background: #f8fbff;
-line-height: 1.9;
-}
+        .course-item::before {
+            content: "";
+            position: absolute;
+            right: 12px;
+            top: 19px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
 
-.course-item::before {
-content: "";
-position: absolute;
-right: 12px;
-top: 19px;
-width: 6px;
-height: 6px;
-border-radius: 50%;
-background: var(--primary);
-}
+        .empty-message {
+            padding: 30px;
+            text-align: center;
+            color: var(--muted);
+        }
 
-/* نمایش در موبایل */
+        /* نمایش در موبایل */
 
-@media (max-width: 650px) {
+        @media (max-width: 650px) {
+            .header {
+                padding: 15px 12px;
+                gap: 8px;
+            }
 
-```
-.header {
-    padding: 15px;
-    gap: 10px;
-}
+            .leader-img {
+                width: 42px;
+                height: 42px;
+            }
 
-.leader-img {
-    width: 42px;
-    height: 42px;
-}
+            .header h1 {
+                font-size: 14px;
+                line-height: 1.7;
+            }
 
-.header h1 {
-    font-size: 15px;
-}
+            .header-logos {
+                gap: 5px;
+            }
 
-.header-logos {
-    gap: 5px;
-}
+            .header-logos img {
+                width: 32px;
+                height: 32px;
+            }
 
-.header-logos img {
-    width: 35px;
-    height: 35px;
-}
+            .container {
+                margin: 25px auto;
+                padding: 0 12px;
+            }
 
-.container {
-    margin: 25px auto;
-    padding: 0 12px;
-}
+            .card-header {
+                padding: 20px 15px;
+            }
 
-.card-header {
-    padding: 20px 15px;
-}
+            .card-header h2 {
+                font-size: 17px;
+            }
 
-.card-header h2 {
-    font-size: 17px;
-}
+            .card-header p {
+                font-size: 12px;
+            }
 
-th,
-td {
-    padding: 14px;
-}
-```
+            .count {
+                padding: 6px 9px;
+                font-size: 11px;
+            }
 
-}
-<link rel="stylesheet" href="./style/login/style.css">
+            th,
+            td {
+                padding: 14px 12px;
+            }
+
+            th,
+            td {
+                font-size: 12px;
+            }
+
+            .courses {
+                min-width: 220px;
+            }
+
+            .course-item {
+                padding: 8px 27px 8px 10px;
+            }
+        }
     </style>
-    <title>welcom</title>
 </head>
+
 <body>
-    <header>
-        <img src="photo/leader.png" alt="خطای بارگزاری">
+
+    <!-- سربرگ -->
+
+    <header class="header">
+
+        <img
+            class="leader-img"
+            src="photo/leader.png"
+            alt="تصویر رهبری"
+        >
+
         <h1>زلال اندیشه دانشگاه قم</h1>
-        <div><img src="photo/nahad-logo.png" alt="خطای بارگزاری">
-            <img src="photo/zolal-logo.png" alt="خطای بارگزاری">
-        </div>  
+
+        <div class="header-logos">
+            <img
+                src="photo/nahad-logo.png"
+                alt="لوگوی نهاد نمایندگی مقام معظم رهبری"
+            >
+
+            <img
+                src="photo/zolal-logo.png"
+                alt="لوگوی زلال اندیشه"
+            >
+        </div>
+
     </header>
-    <section class="card">
 
-            <h2>
-                کاربران سیستم
-            </h2>
+    <!-- محتوای اصلی -->
 
-            <table>
+    <main class="container">
 
-                <thead>
+        <section class="card">
 
-                    <tr>
+            <div class="card-header">
 
-                        <th>
-                            ترم تحصیلی
-                        </th>
+                <div>
+                    <h2>ترم‌های تحصیلی و دروس ارائه‌شده</h2>
+                    <p>فهرست ترم‌ها و درس‌های مجموعه زلال اندیشه</p>
+                </div>
 
-                        <th>
-                            سال
-                        </th>
+                <span class="count" id="term-count">
+                    ۰ ترم
+                </span>
 
-                        <th>
-                            دروس ارايه شده
-                        </th>
+            </div>
 
-                    </tr>
+            <div class="table-wrapper">
 
-                </thead>
+                <table>
 
-                <tbody id="users-body">
-                </tbody>
+                    <thead>
+                        <tr>
+                            <th scope="col">ترم تحصیلی</th>
+                            <th scope="col">سال</th>
+                            <th scope="col">دروس ارائه‌شده</th>
+                        </tr>
+                    </thead>
 
-            </table>
+                    <tbody id="users-body">
+                    </tbody>
+
+                </table>
+
+            </div>
 
         </section>
 
-    <script >
+    </main>
+
+    <script>
+        // اطلاعات ترم‌ها
+        // هر ترم شامل نام ترم، سال و آرایه‌ای از درس‌هاست.
+
         const array = [
-    [
-        ["ترم زمستان","1404","طرح کلی اندیشه اسلامی\nجریان شناسی سیاسی معاصر ایران"]
-    ],
-    [
-        ["ترم پاییز","1405","بررسی تطبیقی حکومت اسلامی با حکومت‌های شبه‌اسلامی و سکولار\nجاهلیت مدرن و کلاسیک با رویکرد اخلاق اسلامی"]
-    ],
-    // ... n بخش اصلی
-];
-        const usersBody =
-            document.querySelector("#users-body");
-        usersBody.innerHTML = "";
+            {
+                term: "ترم زمستان",
+                year: "1404",
+                courses: [
+                    "طرح کلی اندیشه اسلامی",
+                    "جریان‌شناسی سیاسی معاصر ایران"
+                ]
+            },
+            {
+                term: "ترم پاییز",
+                year: "1405",
+                courses: [
+                    "بررسی تطبیقی حکومت اسلامی با حکومت‌های شبه‌اسلامی و سکولار",
+                    "جاهلیت مدرن و کلاسیک با رویکرد اخلاق اسلامی"
+                ]
+            }
+        ];
 
+        const usersBody = document.querySelector("#users-body");
+        const termCount = document.querySelector("#term-count");
 
-        array.forEach((item) => {
+        // پاک‌سازی جدول
+        usersBody.replaceChildren();
+
+        // نمایش تعداد ترم‌ها
+        const persianNumber = (number) =>
+            number.toLocaleString("fa-IR");
+
+        termCount.textContent =
+            `${persianNumber(array.length)} ترم`;
+
+        // ساخت ردیف‌های جدول
+        array.forEach((item, index) => {
+
             const row = document.createElement("tr");
-           array.forEach((iteem) => {
-            
-               row.innerHTML = '<td>iteem</td>'
-           
-        }); 
-           
+
+            // نام ترم
+            const termCell = document.createElement("td");
+
+            const termContent = document.createElement("span");
+            termContent.className = "term-name";
+            termContent.textContent = item.term;
+
+            termCell.appendChild(termContent);
+
+            // سال تحصیلی
+            const yearCell = document.createElement("td");
+
+            const yearBadge = document.createElement("span");
+            yearBadge.className = "year-badge";
+            yearBadge.textContent = item.year;
+
+            yearCell.appendChild(yearBadge);
+
+            // فهرست دروس
+            const coursesCell = document.createElement("td");
+
+            const coursesContainer = document.createElement("div");
+            coursesContainer.className = "courses";
+
+            item.courses.forEach((course) => {
+
+                const courseElement = document.createElement("div");
+                courseElement.className = "course-item";
+                courseElement.textContent = course;
+
+                coursesContainer.appendChild(courseElement);
+
+            });
+
+            coursesCell.appendChild(coursesContainer);
+
+            // افزودن ستون‌ها به ردیف
+            row.appendChild(termCell);
+            row.appendChild(yearCell);
+            row.appendChild(coursesCell);
+
+            // افزودن ردیف به جدول
+            usersBody.appendChild(row);
+
         });
+
+        // نمایش پیام در صورت نبود اطلاعات
+        if (array.length === 0) {
+
+            const row = document.createElement("tr");
+            const cell = document.createElement("td");
+
+            cell.colSpan = 3;
+            cell.className = "empty-message";
+            cell.textContent = "در حال حاضر ترمی ثبت نشده است.";
+
+            row.appendChild(cell);
+            usersBody.appendChild(row);
+
+        }
     </script>
+
 </body>
 </html>

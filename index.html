@@ -3,9 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/login/style.css">
-    <title>ورود</title>
-    <script src="script/profile/data.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+:root {
+--primary: #1769aa;
+--primary-dark: #104b80;
+--primary-light: #eaf4ff;
+--background: #f3f7fc;
+--white: #ffffff;
+--text: #24364b;
+--muted: #74859a;
+--border: #e2eaf3;
+--shadow: 0 8px 30px rgba(29, 78, 130, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+
+body {
+font-family: 'Vazirmatn', Tahoma, sans-serif;
+background: var(--background);
+color: var(--text);
+min-height: 100vh;
+line-height: 1.8;
+}
+
+/* سربرگ */
+
+.header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 24px;
+padding: 20px 5%;
+background: var(--white);
+border-bottom: 1px solid var(--border);
+box-shadow: 0 3px 15px rgba(29, 78, 130, 0.04);
+}
+
+.leader-img {
+width: 65px;
+height: 65px;
+object-fit: contain;
+}
+
+.header h1 {
+font-size: clamp(17px, 2vw, 25px);
+font-weight: 800;
+color: var(--primary-dark);
+text-align: center;
+}
+
+.header-logos {
+display: flex;
+align-items: center;
+gap: 15px;
+}
+
+.header-logos img {
+width: 58px;
+height: 58px;
+object-fit: contain;
+}
+
+/* محتوای اصلی */
+
+.container {
+max-width: 1200px;
+margin: 45px auto;
+padding: 0 24px;
+}
+
+/* کارت */
+
+.card {
+background: var(--white);
+border: 1px solid var(--border);
+border-radius: 18px;
+overflow: hidden;
+box-shadow: var(--shadow);
+}
+
+.card-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 15px;
+padding: 25px 30px;
+border-bottom: 1px solid var(--border);
+background: linear-gradient(135deg, #ffffff, #f5faff);
+}
+
+.card-header h2 {
+font-size: 21px;
+font-weight: 800;
+color: var(--primary-dark);
+}
+
+.card-header p {
+margin-top: 5px;
+font-size: 13px;
+color: var(--muted);
+}
+
+.count {
+white-space: nowrap;
+background: var(--primary-light);
+color: var(--primary);
+border: 1px solid #d3e7ff;
+border-radius: 10px;
+padding: 7px 14px;
+font-size: 13px;
+font-weight: 700;
+}
+
+/* جدول */
+
+.table-wrapper {
+width: 100%;
+overflow-x: auto;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+text-align: right;
+}
+
+thead {
+background: #f0f6fd;
+}
+
+th {
+padding: 17px 22px;
+font-size: 13px;
+font-weight: 800;
+color: var(--primary-dark);
+white-space: nowrap;
+}
+
+td {
+padding: 20px 22px;
+border-top: 1px solid var(--border);
+font-size: 14px;
+vertical-align: middle;
+}
+
+tbody tr {
+transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+background: #f7fbff;
+}
+
+.row-number {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 34px;
+height: 34px;
+background: #edf5ff;
+color: var(--primary);
+border-radius: 10px;
+font-weight: 700;
+}
+
+.term-name {
+font-weight: 700;
+color: var(--text);
+}
+
+.year-badge {
+display: inline-block;
+padding: 5px 12px;
+border-radius: 8px;
+background: #e8f7f0;
+color: #16865b;
+font-size: 13px;
+font-weight: 700;
+white-space: nowrap;
+}
+
+.courses {
+display: flex;
+flex-direction: column;
+gap: 9px;
+min-width: 250px;
+}
+
+.course-item {
+position: relative;
+padding: 10px 14px;
+padding-right: 27px;
+border: 1px solid #e2edfa;
+border-radius: 9px;
+background: #f8fbff;
+line-height: 1.9;
+}
+
+.course-item::before {
+content: "";
+position: absolute;
+right: 12px;
+top: 19px;
+width: 6px;
+height: 6px;
+border-radius: 50%;
+background: var(--primary);
+}
+
+/* نمایش در موبایل */
+
+@media (max-width: 650px) {
+
+```
+.header {
+    padding: 15px;
+    gap: 10px;
+}
+
+.leader-img {
+    width: 42px;
+    height: 42px;
+}
+
+.header h1 {
+    font-size: 15px;
+}
+
+.header-logos {
+    gap: 5px;
+}
+
+.header-logos img {
+    width: 35px;
+    height: 35px;
+}
+
+.container {
+    margin: 25px auto;
+    padding: 0 12px;
+}
+
+.card-header {
+    padding: 20px 15px;
+}
+
+.card-header h2 {
+    font-size: 17px;
+}
+
+th,
+td {
+    padding: 14px;
+}
+```
+
+}
+<link rel="stylesheet" href="style.css">
+    </style>
+    <title>welcom</title>
 </head>
 <body>
     <header>
@@ -15,19 +277,74 @@
             <img src="photo/zolal-logo.png" alt="خطای بارگزاری">
         </div>  
     </header>
-    <form action="index.html">
-        <div class="input">
-            <input id="intcode" name="code" type="number" minlength="11" maxlength="11" placeholder=" " required>
-            <label id="code" for="code">کد دانشجویی</label>
-        </div>
-        <div class="input">
-            <input id="intpass" name="pass" type="password" minlength="8" maxlength="16" placeholder=" " required>
-            <label id="pass" for="pass">رمز عبور</label>
-        </div>
-        <button type="button" id="sub">ورود</button> <button id="submite" type="submit" hidden></button>
-        <h6>کاربر سایت ما نیستید؟ <a href="sin.html">همین حالا ثبت نام کنید</a></h6>
-    </form>
+    <section class="card">
 
-    <script src="script/login/log.js"></script>
+            <h2>
+                کاربران سیستم
+            </h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            ترم تحصیلی
+                        </th>
+
+                        <th>
+                            سال
+                        </th>
+
+                        <th>
+                            دروس ارايه شده
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="users-body">
+                </tbody>
+
+            </table>
+
+        </section>
+
+    <script >
+        const array = [
+    [
+        ["ترم زمستان","1404","طرح کلی اندیشه اسلامی\nجریان شناسی سیاسی معاصر ایران"]
+    ],
+    [
+        ["ترم پاییز","1405","بررسی تطبیقی حکومت اسلامی با حکومت‌های شبه‌اسلامی و سکولار\nجاهلیت مدرن و کلاسیک با رویکرد اخلاق اسلامی"]
+    ],
+    // ... n بخش اصلی
+];
+        const usersBody =
+            document.querySelector("#users-body");
+        usersBody.innerHTML = "";
+
+
+        array.forEach((item) => {
+            const row = document.createElement("tr");
+            row.innerHTML = '
+
+                        <td>
+                            item[0]
+                        </td>
+
+                        <td>
+                            item[1]
+                        </td>
+
+                        <td>
+                           item[2]
+                        </td>
+
+                    ';
+        });
+    </script>
 </body>
 </html>

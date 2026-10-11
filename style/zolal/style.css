@@ -211,7 +211,7 @@ header div img {
 .information {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: space-around;
 
     gap: 16px;
     width: 100%;
@@ -219,7 +219,8 @@ header div img {
 }
 
 .information h5 {
-    max-width: 120px;
+    min-width: 190px;
+    max-width: 250px;
     
     margin: 0;
     font-size: var(--font-md);
@@ -431,7 +432,8 @@ footer {
     }
 
     .information h5 {
-        min-width: 100px;
+        min-width: 150px;
+        max-width: 180px;
     }
 }
 
@@ -482,13 +484,13 @@ footer {
     }
 
     .information {
-        justify-content: flex-start;
         flex-wrap: wrap;
         gap: 4px 10px;
     }
 
     .information h5 {
-        max-width: 70px;
+        max-width: 100px;
+        min-width: 70px;
         font-size: 13px;
     }
 

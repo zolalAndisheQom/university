@@ -1,698 +1,496 @@
+/* ========================================
+   1. فونت B Nazanin
+======================================== */
+
 @font-face {
-font-family: 'B Nazanin';
-src: url('../../front/B-NAZANIN.woff2') format('woff2');
-font-weight: 700;
-font-style: normal;
-font-display: swap;
+    font-family: 'B Nazanin';
+    src: url('../../front/B-NAZANIN.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
-/* =======================
-   Root Theme Variables
-======================= */
+
+@font-face {
+    font-family: 'B Nazanin';
+    src: url('../../front/B-NAZANIN.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ========================================
+   2. رنگ‌بندی هماهنگ با CSS اول
+======================================== */
 
 :root {
-    --primary:   #1E3A8A;
+    --primary: #1E3A8A;
+    --primary-dark: #172D69;
+    --primary-light: #EAF1FF;
+
     --secondary: #3B82F6;
-    --bg-main:   #F8FAFC;
-    --card-bg:   #FFFFFF;
-    --border:    #E5E7EB;
-    --success:   #10B981;
-    --warning:   #F59E0B;
-    --text-main: #1F2937;
-    --text-soft: #6B7280;
+    --background: #F8FAFC;
+    --white: #FFFFFF;
 
-    /* Responsive Font Sizes */
-    --font-xs:   0.8rem;
-    --font-sm:   0.9rem;
-    --font-md:   1rem;
-    --font-lg:   1.15rem;
-    --font-xl:   1.4rem;
-    --font-2xl:  1.8rem;
+    --border: #E5E7EB;
+    --success: #10B981;
+    --warning: #F59E0B;
 
-    --radius-sm: 10px;
-    --radius-md: 14px;
-    --radius-lg: 18px;
+    --text: #1F2937;
+    --muted: #6B7280;
 
-    --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.06);
-    --shadow-header: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    --header-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* =======================
-   Global Reset
-======================= */
+/* ========================================
+   3. تنظیمات عمومی
+======================================== */
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     direction: rtl;
+    font-family: 'B Nazanin', Tahoma, sans-serif;
 }
 
 html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
 }
 
 body {
-    margin: 0;
-    background: var(--bg-main);
-    font-family: B Nazanin;
-    color: var(--text-main);
-    font-size: var(--font-md);
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+
+    background: var(--background);
+    color: var(--text);
+
+    font-size: 20px;
     line-height: 1.8;
+
+    overflow-x: clip;
 }
 
-/* =======================
-   Header
-======================= */
+/* ========================================
+   4. هدر اصلی
+   ساختار و اندازه‌ها مطابق CSS اول
+======================================== */
 
 header {
-    width: 100%;
-    min-height: 90px;
     background: var(--primary);
     color: #fff;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
-
-    padding: 16px 28px;
-    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-    box-shadow: var(--shadow-header);
+    padding: 12px 18px 0 18px;
+    border-radius: 0 0 18px 18px;
+    box-shadow: var(--header-shadow);
 }
 
-/* تصویر اصلی هدر */
-header > img {
-    display: block;
-    width: 80px;
-    max-width: 12%;
-    height: auto;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-/* عنوان هدر */
-header h1 {
-    flex: 1;
-    min-width: 0;
-
-    margin: 0;
-    -size: clamp(1.5rem, 2.2vw, 2rem);
-    -weight: 700;
-    line-height: 1.6;
-    text-align: center;
-
-    overflow-wrap: anywhere;
-}
-
-/* بخش‌های داخلی هدر */
-header div {
-    width: auto;
-    min-width: 80px;
-    max-width: 15%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    flex-shrink: 0;
-}
-
-/* تصاویر داخل بخش‌های هدر */
-header div img {
-    display: block;
-    width: 64px;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-/* جلوگیری از بزرگ‌شدن ناخواسته تصاویر هدر */
 header img {
-    flex-shrink: 0;
+    width: 10%;
 }
 
-/* =======================
-   Main Layout
-======================= */
+header h1 {
+    font-size: xx-large;
+    margin: 0;
+    font-weight: 600;
+    text-align: center;
+}
 
-.bod {
+header div {
+    width: 13%;
+    display: flex;
+}
+
+header div img {
+    width: 50%;
+}
+
+/* ========================================
+   5. محتوای اصلی
+======================================== */
+
+.container {
     width: 100%;
     max-width: 1200px;
+    min-width: 0;
 
-    margin: 36px auto;
+    margin: 40px auto;
     padding: 0 24px;
-
-    display: grid;
-    gap: 26px;
 }
 
-.main {
+/* ========================================
+   6. کارت اصلی
+======================================== */
+
+.card {
     width: 100%;
     min-width: 0;
 
-    background: var(--card-bg);
-    border-radius: var(--radius-lg);
-
-    padding: 28px;
-
+    background: var(--white);
     border: 1px solid var(--border);
-    box-shadow: var(--shadow-card);
-}
-
-/* =======================
-   Course Tabs
-======================= */
-
-.chois {
-    position: relative;
-
-    display: flex;
-    align-items: center;
-
-    width: 100%;
-    padding: 6px;
-    margin-bottom: 22px;
-
-    background: #E5E7EB;
-    border-radius: var(--radius-md);
+    border-radius: 18px;
     overflow: hidden;
+
+    box-shadow: var(--shadow);
 }
 
-.chois h3 {
-    flex: 1;
-    min-width: 0;
+/* ========================================
+   7. سربرگ کارت
+======================================== */
 
-    margin: 0;
-    padding: 12px 8px;
-
-    text-align: center;
-    -size: var(---md);
-    -weight: 600;
-    line-height: 1.6;
-
-    color: var(--text-soft);
-    cursor: pointer;
-    user-select: none;
-
-    position: relative;
-    z-index: 2;
-
-    transition: color 0.2s ease;
-}
-
-.chois h3.active {
-    color: #fff;
-}
-
-#select {
-    position: absolute;
-
-    width: calc(50% - 6px);
-    height: calc(100% - 12px);
-
-    top: 6px;
-    right: 6px;
-
-    background: var(--primary);
-    border-radius: var(--radius-sm);
-
-    transition: transform 0.35s cubic-bezier(.4, 0, .2, 1);
-    z-index: 1;
-}
-
-#select.select {
-    transform: translateX(-100%);
-}
-
-/* =======================
-   Teacher Info
-======================= */
-
-#teacher {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-
-    width: 100%;
-    min-width: 0;
-
-    padding: 20px;
-
-    border-top: 4px solid var(--primary);
-    background: #F9FAFB;
-
-    border-radius: var(--radius-md);
-    margin-bottom: 20px;
-}
-
-.information {
+.card-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    gap: 16px;
-    width: 100%;
+    gap: 15px;
+    padding: 25px 30px;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-dark)
+    );
+
+    color: var(--white);
+}
+
+.card-header > div {
     min-width: 0;
 }
 
-.information h5 {
-    min-width: 120px;
-
-    margin: 0;
-    -size: var(---md);
-    -weight: 600;
-    line-height: 1.8;
-
+.card-header h2 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.6;
     overflow-wrap: anywhere;
 }
 
-/* =======================
-   Upload Section
-======================= */
+.card-header p {
+    margin-top: 5px;
+    font-size: 21px;
+    color: #E8EEFF;
+}
 
-#load {
+.count {
+    flex-shrink: 0;
+    white-space: nowrap;
+
+    padding: 7px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.14);
+    color: var(--white);
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* ========================================
+   8. جدول
+======================================== */
+
+.table-wrapper {
     display: block;
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
 
-    padding: 14px 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
 
-    border: none;
-    border-radius: var(--radius-md);
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+}
 
-    background: var(--success);
-    color: #fff;
+table {
+    width: 100%;
+    min-width: 600px;
 
-    -family: inherit;
-    -size: var(---md);
-    -weight: 700;
+    border-collapse: collapse;
+    text-align: right;
+}
 
+thead {
+    background: var(--primary-light);
+}
+
+th {
+    padding: 17px 22px;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    color: var(--primary);
+    white-space: nowrap;
+}
+
+td {
+    padding: 20px 22px;
+
+    border-top: 1px solid var(--border);
+
+    font-size: 21px;
+    vertical-align: middle;
+}
+
+tbody tr {
+    transition: background 0.2s ease;
+}
+
+tbody tr:nth-child(even) {
+    background: #FBFCFF;
+}
+
+tbody tr.clickable-row {
     cursor: pointer;
-    transition: filter 0.2s ease, transform 0.2s ease;
 }
 
-#load:hover {
-    filter: brightness(1.08);
+tbody tr.clickable-row:hover {
+    background: var(--primary-light);
 }
 
-#load:active {
-    transform: scale(0.99);
+tbody tr.clickable-row:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: -3px;
 }
 
-#sours {
-    margin-top: 16px;
-    width: 100%;
-    min-width: 0;
+tbody tr.clickable-row:active {
+    background: #DCE7FF;
 }
 
-/* =======================
-   Trouble Form
-======================= */
+/* ========================================
+   9. اطلاعات ترم و سال
+======================================== */
 
-form {
-    width: 100%;
-    min-width: 0;
-    margin-top: 14px;
+.term-name {
+    font-weight: 700;
+    color: var(--primary-dark);
+    white-space: nowrap;
 }
 
-form label {
-    display: block;
+.year-badge {
+    display: inline-block;
 
-    margin-bottom: 8px;
+    padding: 5px 12px;
+    border-radius: 8px;
 
-    color: var(--text-soft);
-    -size: var(---sm);
-    -weight: 600;
-    line-height: 1.8;
+    background: #E8F7F0;
+    color: #16865B;
+
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
-textarea {
-    display: block;
-    width: 100%;
-    min-height: 140px;
+/* ========================================
+   10. دروس
+======================================== */
 
-    padding: 14px;
-
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius-md);
-
-    background: #fff;
-    color: var(--text-main);
-
-    -family: inherit;
-    -size: var(---md);
-    line-height: 1.8;
-
-    outline: none;
-    resize: vertical;
-
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-textarea:focus {
-    border-color: var(--secondary);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
-}
-
-/* =======================
-   File Upload
-======================= */
-
-#filediv {
-    width: 100%;
-    margin: 18px 0;
-}
-
-#filediv > div {
+.courses {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
+    flex-direction: column;
+    gap: 9px;
+
+    min-width: 250px;
 }
 
-#cfile {
-    padding: 10px 18px;
+.course-item {
+    position: relative;
 
-    border: none;
-    border-radius: var(--radius-sm);
+    padding: 10px 30px 10px 14px;
 
-    background: var(--secondary);
-    color: #fff;
+    border: 1px solid #E1E8F5;
+    border-radius: 9px;
 
-    -family: inherit;
-    -size: var(---sm);
-    -weight: 600;
+    background: #F8FAFF;
 
-    cursor: pointer;
-    transition: filter 0.2s ease;
-}
-
-#cfile:hover {
-    filter: brightness(1.08);
-}
-
-#name {
-    margin: 0;
-
-    color: var(--text-soft);
-    -size: var(---xs);
+    font-size: 21px;
+    line-height: 1.9;
 
     overflow-wrap: anywhere;
 }
 
-/* =======================
-   Submit Button
-======================= */
+.course-item::before {
+    content: "";
 
-form button[type="submit"] {
-    display: block;
-    width: 100%;
+    position: absolute;
+    right: 12px;
+    top: 19px;
 
-    padding: 14px 18px;
+    width: 6px;
+    height: 6px;
 
-    border: none;
-    border-radius: var(--radius-md);
-
-    background: var(--primary);
-    color: #fff;
-
-    -family: inherit;
-    -size: var(---md);
-    -weight: 700;
-
-    cursor: pointer;
-    transition: filter 0.2s ease, transform 0.2s ease;
+    border-radius: 50%;
+    background: var(--secondary);
 }
 
-form button[type="submit"]:hover {
-    filter: brightness(1.12);
-}
-
-form button[type="submit"]:active {
-    transform: scale(0.99);
-}
-
-/* =======================
-   Footer
-======================= */
-
-footer {
-    width: 100%;
-
-    padding: 18px 16px 24px;
-
+.empty-message {
+    padding: 30px;
     text-align: center;
-
-    color: var(--text-soft);
-    font-size: var(--font-xs);
-    line-height: 1.8;
+    color: var(--muted);
+    font-size: 20px;
 }
 
-/* =======================
-   Tablet
-======================= */
+/* ========================================
+   11. تبلت و نمایشگرهای متوسط
+======================================== */
 
 @media (max-width: 900px) {
-    header {
-        gap: 14px;
-        padding: 14px 20px;
-    }
-
-    header > img {
-        width: 65px;
-    }
-
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    header div {
-        min-width: 60px;
-    }
-
-    header div img {
-        width: 52px;
-    }
-
-    .bod {
-        max-width: 100%;
+    .container {
+        margin: 30px auto;
         padding: 0 18px;
-        margin: 28px auto;
-        gap: 20px;
     }
 
-    .main {
-        padding: 24px;
+    .card-header {
+        padding: 22px 24px;
     }
 
-    .information {
-        gap: 12px;
+    .card-header h2 {
+        font-size: 26px;
     }
 
-    .information h5 {
-        min-width: 100px;
+    .card-header p {
+        font-size: 19px;
+    }
+
+    th {
+        font-size: 20px;
+    }
+
+    td {
+        font-size: 19px;
+    }
+
+    .course-item {
+        font-size: 19px;
     }
 }
 
-/* =======================
-   Mobile
-======================= */
+/* ========================================
+   12. موبایل
+======================================== */
 
-@media (max-width: 600px) {
-    body {
-        font-size: 14px;
-    }
-
-    /* هدر موبایل */
-    header {
-        min-height: 64px;
-
-        gap: 8px;
-        padding: 10px 12px;
-
-        border-radius: 0 0 14px 14px;
-    }
-
-    header > img {
-        width: 42px;
-        max-width: 15%;
-    }
-
+@media (max-width: 700px) {
+    /* اندازه عنوان هدر مطابق CSS اول */
     header h1 {
         font-size: 15px;
-        line-height: 1.7;
-        font-weight: 700;
-    }
-
-    header div {
-        min-width: 38px;
-        max-width: 15%;
-        gap: 4px;
-    }
-
-    header div img {
-        width: 38px;
-        max-width: 100%;
-    }
-
-    /* محتوای اصلی */
-    .bod {
-        margin: 20px auto;
-        padding: 0 12px;
-        gap: 16px;
-    }
-
-    .main {
-        padding: 16px;
-        border-radius: 14px;
-    }
-
-    /* تب‌ها */
-    .chois {
-        margin-bottom: 16px;
-        padding: 5px;
-    }
-
-    .chois h3 {
-        padding: 9px 5px;
-        font-size: 13px;
-    }
-
-    #select {
-        top: 5px;
-        right: 5px;
-        width: calc(50% - 5px);
-        height: calc(100% - 10px);
-    }
-
-    /* اطلاعات مدرس */
-    #teacher {
-        padding: 14px;
-        gap: 8px;
-        margin-bottom: 16px;
-    }
-
-    .information {
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 4px 10px;
-    }
-
-    .information h5 {
-        min-width: 0;
-        font-size: 13px;
-    }
-
-    /* دکمه بارگذاری */
-    #load {
-        padding: 11px 12px;
-        font-size: 13px;
-    }
-
-    #sours {
-        margin-top: 12px;
-    }
-
-    /* فرم */
-    form {
-        margin-top: 8px;
-    }
-
-    form label {
-        font-size: 12px;
-    }
-
-    textarea {
-        min-height: 110px;
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    /* بارگذاری فایل */
-    #filediv {
-        margin: 14px 0;
-    }
-
-    #filediv > div {
-        gap: 8px;
-    }
-
-    #cfile {
-        padding: 8px 12px;
-        font-size: 12px;
-    }
-
-    #name {
-        font-size: 11px;
-    }
-
-    /* ثبت نهایی */
-    form button[type="submit"] {
-        padding: 11px 12px;
-        font-size: 13px;
-    }
-
-    footer {
-        padding: 14px 10px 18px;
-        font-size: 11px;
     }
 }
 
-/* =======================
-   Very Small Mobile
-======================= */
-
-@media (max-width: 360px) {
-    header {
-        gap: 5px;
-        padding: 8px;
+@media (max-width: 650px) {
+    .container {
+        margin: 24px auto;
+        padding: 0 10px;
     }
 
-    header > img {
-        width: 32px;
+    .card {
+        border-radius: 13px;
     }
 
-    header h1 {
-        font-size: 13px;
+    .card-header {
+        padding: 18px 13px;
+        gap: 8px;
     }
 
-    header div {
-        min-width: 30px;
+    .card-header h2 {
+        font-size: 20px;
     }
 
-    header div img {
-        width: 30px;
+    .card-header p {
+        font-size: 16px;
+        line-height: 1.8;
     }
 
-    .bod {
+    .count {
+        padding: 5px 8px;
+        font-size: 16px;
+    }
+
+    th,
+    td {
+        padding: 13px 12px;
+        font-size: 16px;
+    }
+
+    .courses {
+        min-width: 230px;
+    }
+
+    .course-item {
+        padding: 8px 27px 8px 10px;
+        font-size: 16px;
+    }
+
+    .year-badge {
+        font-size: 16px;
+    }
+
+    .empty-message {
+        padding: 22px 14px;
+        font-size: 16px;
+    }
+}
+
+/* ========================================
+   13. موبایل‌های کوچک
+======================================== */
+
+@media (max-width: 380px) {
+    .container {
         padding: 0 8px;
     }
 
-    .main {
-        padding: 12px;
+    .card-header {
+        gap: 7px;
+        padding: 16px 10px;
     }
 
-    .chois h3 {
-        font-size: 12px;
-        padding: 8px 3px;
+    .card-header h2 {
+        font-size: 18px;
     }
 
-    .information h5 {
-        font-size: 12px;
+    .card-header p {
+        font-size: 15px;
+    }
+
+    .count {
+        font-size: 14px;
+        padding: 4px 6px;
+    }
+
+    th,
+    td {
+        padding: 11px 10px;
+        font-size: 15px;
+    }
+
+    .course-item {
+        font-size: 15px;
     }
 }
 
-/* =======================
-   Accessibility
-======================= */
+/* ========================================
+   14. دسترس‌پذیری
+======================================== */
 
 button:focus-visible,
+a:focus-visible,
 textarea:focus-visible,
-.chois h3:focus-visible {
+input:focus-visible,
+tbody tr.clickable-row:focus-visible {
     outline: 3px solid var(--secondary);
     outline-offset: 3px;
 }
 
-/* جلوگیری از انیمیشن برای کاربرانی که آن را غیرفعال کرده‌اند */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -703,4 +501,3 @@ textarea:focus-visible,
         animation-iteration-count: 1 !important;
     }
 }
-```

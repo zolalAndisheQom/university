@@ -46,13 +46,12 @@ body {
   align-items: center;
   gap: 12px;
   color: var(--gold);
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
 }
-
 .topline::before {
   content: "";
-  width: 62px;
+  width: 55px;
   height: 3px;
   background: var(--gold);
 }
@@ -67,8 +66,7 @@ header { padding: 18px 0 28px; }
 }
 
 h1 {
-  font-family: "BTitr", "BNazanin", Tahoma, sans-serif;
-  font-size: clamp(34px, 5.5vw, 62px);
+  font-family: "BNazanin";
   line-height: 1.45;
   margin: 10px 0 4px;
 }
@@ -146,7 +144,7 @@ h1 {
   left: 20px;
   bottom: 38px;
   margin: 0;
-  font-family: "BTitr", "BNazanin", Tahoma, sans-serif;
+  font-family:  "BNazanin";
   font-size: clamp(25px, 3.2vw, 35px);
   line-height: 1.5;
 }
@@ -277,7 +275,26 @@ footer {
     font-size: 14px;
   }
 }
-
+.buten{
+    width: 35%;
+    padding: 15px;
+    background-color: var(--gold);
+    border-radius: 20px;
+    color: var(--bg);
+}
+.buten strong{
+    font-size: x-large;
+}
+@media (max-width: 750px) {
+  .buten{width: 60%;}
+  .buten strong{font-size:medium;}
+  .bottom{flex-direction: column; align-items: center;}
+}
+@media (max-width: 390px) {
+  .buten{width: 60%;}
+  .buten strong{font-size:small;}
+  .bottom{flex-direction: column; align-items: center;}
+}
 @media (max-width: 420px) {
   .grid { grid-template-columns: 1fr; }
   .hero { height: 275px; }
@@ -395,9 +412,8 @@ footer {
   </div>
 
   <button
-                id="backup-btn"
                 type="button"
-                class="gray"
+                class="buten"
                 onclick="window.location.href='https://eitaa.com/resaneh_nahad'"
             >
                 <strong>همین حالا این جا رو لمس کن</strong>

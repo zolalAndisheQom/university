@@ -1,3 +1,10 @@
+@font-face {
+font-family: 'B Nazanin';
+src: url('../../front/B-NAZANIN.woff2') format('woff2');
+font-weight: 700;
+font-style: normal;
+font-display: swap;
+}
 /* =======================
    Root Theme Variables
 ======================= */
@@ -12,272 +19,688 @@
     --warning:   #F59E0B;
     --text-main: #1F2937;
     --text-soft: #6B7280;
-  }
-  
-  /* =======================
-     Global Reset
-  ======================= */
-  
-  * {
+
+    /* Responsive Font Sizes */
+    --font-xs:   0.8rem;
+    --font-sm:   0.9rem;
+    --font-md:   1rem;
+    --font-lg:   1.15rem;
+    --font-xl:   1.4rem;
+    --font-2xl:  1.8rem;
+
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 18px;
+
+    --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.06);
+    --shadow-header: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* =======================
+   Global Reset
+======================= */
+
+* {
     box-sizing: border-box;
     direction: rtl;
-  }
-  
-  body {
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
     margin: 0;
     background: var(--bg-main);
-    font-family: Vazirmatn, IRANSans, system-ui, sans-serif;
+    font-family: B Nazanin;
     color: var(--text-main);
-  }
-  
-  /* =======================
-     Header
-  ======================= */
-  
-  header {
+    font-size: var(--font-md);
+    line-height: 1.8;
+}
+
+/* =======================
+   Header
+======================= */
+
+header {
+    width: 100%;
+    min-height: 90px;
     background: var(--primary);
     color: #fff;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 18px 0 18px;
-    border-radius: 0 0 18px 18px;
-    box-shadow: 0 4px 12px rgba(0,0,0,.08);
-  }
-  
-  header img {
-    width: 10%;
-  }
-  
-  header h1 {
-    font-size: xx-large;
-    margin: 0;
-    font-weight: 600;
-    text-align: center;
-  }
-  header div{
-    width: 13%;
-    display: flex;
-  }
-  header div img{
-    width: 50%;
-  }
-  
-  /* =======================
-     Main Layout
-  ======================= */
-  
-  .bod {
-    max-width: 1100px;
-    margin: 35px auto;
-    padding: 0 16px;
-    display: grid;
-    gap: 26px;
-  }
-  
-  .main {
-    background: var(--card-bg);
-    border-radius: 18px;
-    padding: 22px;
-    border: 1px solid var(--border);
-    box-shadow: 0 10px 25px rgba(0,0,0,.06);
-  }
-  
-  
-  /* =======================
-     Course Tabs
-  ======================= */
-  
-  .chois {
-    background: #E5E7EB;
-    border-radius: 14px;
-    display: flex;
-    position: relative;
-    padding: 6px;
-    margin-bottom: 18px;
-    overflow: hidden;
-  }
-  
-  .chois h3 {
-    flex: 1;
-    text-align: center;
-    margin: 0;
-    font-size: 14px;
-    padding: 10px 0;
-    cursor: pointer;
-    z-index: 2;
-    color: #6B7280;
-    transition: .2s;
-    user-select: none;
-  }
-  
-  .chois h3.active {
-    color: #fff;
-  }
-  
-  #select {
-    position: absolute;
-    width: calc(50% - 6px);
-    height: calc(100% - 12px);
-    background: var(--primary);
-    border-radius: 10px;
-    top: 6px;
-    right: 6px;
-    transition: transform .35s cubic-bezier(.4,0,.2,1);
-    z-index: 1;
-  }
-  
-  #select.select {
-    transform: translateX(-100%);
-  }
-  
-  /* =======================
-     Teacher Info
-  ======================= */
-  
-  #teacher {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border-top: 4px solid var(--primary);
-    padding: 14px;
-    background: #F9FAFB;
-    border-radius: 14px;
-    margin-bottom: 16px;
-    
-  }
-  .information{
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-  }
-  .information h5{
-    min-width: 110px;
-    font-size: 15px;
-  }
-  
-  /* =======================
-     Upload Section
-  ======================= */
-  
-  #load {
-    width: 100%;
-    padding: 12px;
-    border-radius: 14px;
-    border: none;
-    background: var(--success);
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: .2s;
-  }
-  
-  #load:hover {
-    filter: brightness(1.1);
-  }
-  
-  #sours {
-    margin-top: 12px;
-  }
-  
-  /* =======================
-     Trouble Form
-  ======================= */
-  
-  form {
-    margin-top: 10px;
-  }
-  
-  form label {
+    gap: 20px;
+
+    padding: 16px 28px;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    box-shadow: var(--shadow-header);
+}
+
+/* تصویر اصلی هدر */
+header > img {
     display: block;
-    margin-bottom: 6px;
-    font-size: 13px;
-    color: var(--text-soft);
-  }
-  
-  textarea {
-    width: 100%;
-    min-height: 120px;
-    border-radius: 14px;
-    border: 1.5px solid var(--border);
-    padding: 12px;
-    outline: none;
-    resize: vertical;
-    font-family: inherit;
-    transition: .2s;
-  }
-  
-  textarea:focus {
-    border-color: var(--secondary);
-  }
-  
-  /* =======================
-     File Upload
-  ======================= */
-  
-  #filediv {
-    margin: 14px 0;
-  }
-  
-  #filediv div {
+    width: 80px;
+    max-width: 12%;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* عنوان هدر */
+header h1 {
+    flex: 1;
+    min-width: 0;
+
+    margin: 0;
+    -size: clamp(1.5rem, 2.2vw, 2rem);
+    -weight: 700;
+    line-height: 1.6;
+    text-align: center;
+
+    overflow-wrap: anywhere;
+}
+
+/* بخش‌های داخلی هدر */
+header div {
+    width: auto;
+    min-width: 80px;
+    max-width: 15%;
+
     display: flex;
     align-items: center;
-    gap: 12px;
-  }
-  
-  #cfile {
-    background: var(--secondary);
-    border: none;
-    color: white;
-    border-radius: 10px;
-    padding: 8px 14px;
-    cursor: pointer;
-  }
-  
-  #name {
-    font-size: 12px;
-    color: var(--text-soft);
-    margin: 0;
-  }
-  
-  /* =======================
-     Submit Button
-  ======================= */
-  
-  form button[type="submit"] {
-    background: var(--primary);
-    border: none;
-    border-radius: 14px;
-    padding: 12px;
+    justify-content: center;
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+/* تصاویر داخل بخش‌های هدر */
+header div img {
+    display: block;
+    width: 64px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* جلوگیری از بزرگ‌شدن ناخواسته تصاویر هدر */
+header img {
+    flex-shrink: 0;
+}
+
+/* =======================
+   Main Layout
+======================= */
+
+.bod {
     width: 100%;
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: .2s;
-  }
-  
-  form button[type="submit"]:hover {
-    filter: brightness(1.1);
-  }
-  
-  /* =======================
-     Footer
-  ======================= */
-  
-  footer {
+    max-width: 1200px;
+
+    margin: 36px auto;
+    padding: 0 24px;
+
+    display: grid;
+    gap: 26px;
+}
+
+.main {
+    width: 100%;
+    min-width: 0;
+
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+
+    padding: 28px;
+
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-card);
+}
+
+/* =======================
+   Course Tabs
+======================= */
+
+.chois {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 22px;
+
+    background: #E5E7EB;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.chois h3 {
+    flex: 1;
+    min-width: 0;
+
+    margin: 0;
+    padding: 12px 8px;
+
     text-align: center;
-    padding: 14px 10px 20px;
+    -size: var(---md);
+    -weight: 600;
+    line-height: 1.6;
+
     color: var(--text-soft);
-    font-size: 12px;
-  }
-  
-  /* =======================
-     Responsive
-  ======================= */
-  @media (max-width: 700px) {
-    header h1 {
-      font-size: 15px;
+    cursor: pointer;
+    user-select: none;
+
+    position: relative;
+    z-index: 2;
+
+    transition: color 0.2s ease;
+}
+
+.chois h3.active {
+    color: #fff;
+}
+
+#select {
+    position: absolute;
+
+    width: calc(50% - 6px);
+    height: calc(100% - 12px);
+
+    top: 6px;
+    right: 6px;
+
+    background: var(--primary);
+    border-radius: var(--radius-sm);
+
+    transition: transform 0.35s cubic-bezier(.4, 0, .2, 1);
+    z-index: 1;
+}
+
+#select.select {
+    transform: translateX(-100%);
+}
+
+/* =======================
+   Teacher Info
+======================= */
+
+#teacher {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 20px;
+
+    border-top: 4px solid var(--primary);
+    background: #F9FAFB;
+
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+}
+
+.information {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+    width: 100%;
+    min-width: 0;
+}
+
+.information h5 {
+    min-width: 120px;
+
+    margin: 0;
+    -size: var(---md);
+    -weight: 600;
+    line-height: 1.8;
+
+    overflow-wrap: anywhere;
+}
+
+/* =======================
+   Upload Section
+======================= */
+
+#load {
+    display: block;
+    width: 100%;
+
+    padding: 14px 18px;
+
+    border: none;
+    border-radius: var(--radius-md);
+
+    background: var(--success);
+    color: #fff;
+
+    -family: inherit;
+    -size: var(---md);
+    -weight: 700;
+
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+#load:hover {
+    filter: brightness(1.08);
+}
+
+#load:active {
+    transform: scale(0.99);
+}
+
+#sours {
+    margin-top: 16px;
+    width: 100%;
+    min-width: 0;
+}
+
+/* =======================
+   Trouble Form
+======================= */
+
+form {
+    width: 100%;
+    min-width: 0;
+    margin-top: 14px;
+}
+
+form label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--text-soft);
+    -size: var(---sm);
+    -weight: 600;
+    line-height: 1.8;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    min-height: 140px;
+
+    padding: 14px;
+
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-md);
+
+    background: #fff;
+    color: var(--text-main);
+
+    -family: inherit;
+    -size: var(---md);
+    line-height: 1.8;
+
+    outline: none;
+    resize: vertical;
+
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+/* =======================
+   File Upload
+======================= */
+
+#filediv {
+    width: 100%;
+    margin: 18px 0;
+}
+
+#filediv > div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+#cfile {
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: var(--radius-sm);
+
+    background: var(--secondary);
+    color: #fff;
+
+    -family: inherit;
+    -size: var(---sm);
+    -weight: 600;
+
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
+
+#cfile:hover {
+    filter: brightness(1.08);
+}
+
+#name {
+    margin: 0;
+
+    color: var(--text-soft);
+    -size: var(---xs);
+
+    overflow-wrap: anywhere;
+}
+
+/* =======================
+   Submit Button
+======================= */
+
+form button[type="submit"] {
+    display: block;
+    width: 100%;
+
+    padding: 14px 18px;
+
+    border: none;
+    border-radius: var(--radius-md);
+
+    background: var(--primary);
+    color: #fff;
+
+    -family: inherit;
+    -size: var(---md);
+    -weight: 700;
+
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+form button[type="submit"]:hover {
+    filter: brightness(1.12);
+}
+
+form button[type="submit"]:active {
+    transform: scale(0.99);
+}
+
+/* =======================
+   Footer
+======================= */
+
+footer {
+    width: 100%;
+
+    padding: 18px 16px 24px;
+
+    text-align: center;
+
+    color: var(--text-soft);
+    font-size: var(--font-xs);
+    line-height: 1.8;
+}
+
+/* =======================
+   Tablet
+======================= */
+
+@media (max-width: 900px) {
+    header {
+        gap: 14px;
+        padding: 14px 20px;
     }
-  }
+
+    header > img {
+        width: 65px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header div {
+        min-width: 60px;
+    }
+
+    header div img {
+        width: 52px;
+    }
+
+    .bod {
+        max-width: 100%;
+        padding: 0 18px;
+        margin: 28px auto;
+        gap: 20px;
+    }
+
+    .main {
+        padding: 24px;
+    }
+
+    .information {
+        gap: 12px;
+    }
+
+    .information h5 {
+        min-width: 100px;
+    }
+}
+
+/* =======================
+   Mobile
+======================= */
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    /* هدر موبایل */
+    header {
+        min-height: 64px;
+
+        gap: 8px;
+        padding: 10px 12px;
+
+        border-radius: 0 0 14px 14px;
+    }
+
+    header > img {
+        width: 42px;
+        max-width: 15%;
+    }
+
+    header h1 {
+        font-size: 15px;
+        line-height: 1.7;
+        font-weight: 700;
+    }
+
+    header div {
+        min-width: 38px;
+        max-width: 15%;
+        gap: 4px;
+    }
+
+    header div img {
+        width: 38px;
+        max-width: 100%;
+    }
+
+    /* محتوای اصلی */
+    .bod {
+        margin: 20px auto;
+        padding: 0 12px;
+        gap: 16px;
+    }
+
+    .main {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    /* تب‌ها */
+    .chois {
+        margin-bottom: 16px;
+        padding: 5px;
+    }
+
+    .chois h3 {
+        padding: 9px 5px;
+        font-size: 13px;
+    }
+
+    #select {
+        top: 5px;
+        right: 5px;
+        width: calc(50% - 5px);
+        height: calc(100% - 10px);
+    }
+
+    /* اطلاعات مدرس */
+    #teacher {
+        padding: 14px;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .information {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 4px 10px;
+    }
+
+    .information h5 {
+        min-width: 0;
+        font-size: 13px;
+    }
+
+    /* دکمه بارگذاری */
+    #load {
+        padding: 11px 12px;
+        font-size: 13px;
+    }
+
+    #sours {
+        margin-top: 12px;
+    }
+
+    /* فرم */
+    form {
+        margin-top: 8px;
+    }
+
+    form label {
+        font-size: 12px;
+    }
+
+    textarea {
+        min-height: 110px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* بارگذاری فایل */
+    #filediv {
+        margin: 14px 0;
+    }
+
+    #filediv > div {
+        gap: 8px;
+    }
+
+    #cfile {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    #name {
+        font-size: 11px;
+    }
+
+    /* ثبت نهایی */
+    form button[type="submit"] {
+        padding: 11px 12px;
+        font-size: 13px;
+    }
+
+    footer {
+        padding: 14px 10px 18px;
+        font-size: 11px;
+    }
+}
+
+/* =======================
+   Very Small Mobile
+======================= */
+
+@media (max-width: 360px) {
+    header {
+        gap: 5px;
+        padding: 8px;
+    }
+
+    header > img {
+        width: 32px;
+    }
+
+    header h1 {
+        font-size: 13px;
+    }
+
+    header div {
+        min-width: 30px;
+    }
+
+    header div img {
+        width: 30px;
+    }
+
+    .bod {
+        padding: 0 8px;
+    }
+
+    .main {
+        padding: 12px;
+    }
+
+    .chois h3 {
+        font-size: 12px;
+        padding: 8px 3px;
+    }
+
+    .information h5 {
+        font-size: 12px;
+    }
+}
+
+/* =======================
+   Accessibility
+======================= */
+
+button:focus-visible,
+textarea:focus-visible,
+.chois h3:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 3px;
+}
+
+/* جلوگیری از انیمیشن برای کاربرانی که آن را غیرفعال کرده‌اند */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+```

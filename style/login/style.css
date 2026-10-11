@@ -89,91 +89,35 @@ overflow-x: clip;
 /* ========================================
 4. هدر اصلی
 ======================================== */
-
-header {
-width: 100%;
-min-height: var(--header-height);
-
-```
-display: flex;
-align-items: center;
-justify-content: space-between;
-
-gap: 20px;
-padding: 10px 24px;
-
-background: var(--header-primary);
-color: var(--header-text);
-
-border-radius: 0 0 18px 18px;
-
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-```
-
-}
-
-/* تصویر سمت چپ هدر */
-
-header > img {
-height: 56px;
-width: auto;
-max-width: 20%;
-
-```
-flex-shrink: 0;
-
-object-fit: contain;
-```
-
-}
-
-/* عنوان هدر */
-
-header h1 {
-flex: 1;
-min-width: 0;
-
-```
-font-size: clamp(20px, 2.5vw, 30px);
-font-weight: 700;
-
-line-height: 1.6;
-text-align: center;
-
-overflow-wrap: anywhere;
-```
-
-}
-
-/* محفظه لوگوها */
-
-header > div {
-height: 56px;
-
-```
-display: flex;
-align-items: center;
-justify-content: flex-end;
-
-gap: 12px;
-
-flex-shrink: 0;
-```
-
-}
-
-/* لوگوهای هدر */
-
-header > div img {
-height: 100%;
-width: auto;
-max-width: 75px;
-
-```
-object-fit: contain;
-```
-
-}
+  header {
+    background: var(--primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px 0 18px;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  }
+  
+  header img {
+    width: 10%;
+  }
+  
+  header h1 {
+    font-size: xx-large;
+    margin: 0;
+    font-weight: 600;
+    text-align: center;
+  }
+  header div{
+    width: 13%;
+    display: flex;
+  }
+  header div img{
+    width: 50%;
+  }
+  
 
 /* ========================================
 5. محتوای اصلی
@@ -520,36 +464,38 @@ td {
 
 @media (max-width: 650px) {
 
-```
 :root {
     --header-height: 60px;
 }
+  header {
+    background: var(--primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px 0 18px;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  }
+  
+  header img {
+    width: 10%;
+  }
+  
+  header h1 {
+    font-size: xx-large;
+    margin: 0;
+    font-weight: 600;
+    text-align: center;
+  }
+  header div{
+    width: 13%;
+    display: flex;
+  }
+  header div img{
+    width: 50%;
+  }
 
-header {
-    gap: 8px;
-    padding: 7px 12px;
-
-    border-radius: 0 0 12px 12px;
-}
-
-header > img {
-    height: 44px;
-    max-width: 18%;
-}
-
-header > div {
-    height: 44px;
-    gap: 5px;
-}
-
-header > div img {
-    max-width: 42px;
-}
-
-header h1 {
-    font-size: clamp(15px, 3.5vw, 21px);
-    line-height: 1.5;
-}
 
 .container {
     margin: 24px auto;
@@ -597,7 +543,6 @@ td {
 .year-badge {
     font-size: 16px;
 }
-```
 
 }
 

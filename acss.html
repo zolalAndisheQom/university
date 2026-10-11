@@ -8,7 +8,10 @@
 <style>
 @font-face {
   font-family: "BNazanin";
-  src: local("B Nazanin");
+  src: url('../../front/B-NAZANIN.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;;
 }
 @font-face {
   font-family: "BTitr";
@@ -29,7 +32,7 @@ body {
   margin: 0;
   background: radial-gradient(ellipse at 50% -10%, #173338 0, transparent 45%), var(--bg);
   color: var(--white);
-  font-family: "BNazanin", Tahoma, sans-serif;
+  font-family: BNazanin;
 }
 
 .wrap {
@@ -361,7 +364,7 @@ footer {
     <div class="summary">از فیلم و تصویرهای خام تا یک روایت منسجم.</div>
     <div class="details">
       <p><strong>در این حوزه:</strong> میتونی گزارش تصویری درست کنی؟
-      مستند یا نصاخبه چی!؟
+      مستند یا مصاحبه چی!؟
       ما منتظریم تا از توانایی های شما استفاده کنیم</p>
     </div>
   </article>
@@ -391,7 +394,14 @@ footer {
     <p>علاقه‌مندی‌ات را انتخاب کن و برای همکاران ما بفرست تا برای مصاحبه باهات هماهنگ کنند. </p>
   </div>
 
-  <a ><strong>همین حالا این جا رو لمس کن</strong>:</strong></a>
+  <button
+                id="backup-btn"
+                type="button"
+                class="gray"
+                onclick="window.location.href='https://eitaa.com/resaneh_nahad'"
+            >
+                <strong>همین حالا این جا رو لمس کن</strong>
+            </button>
 </section>
 
 <footer>

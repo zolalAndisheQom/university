@@ -32,7 +32,7 @@
     --radius-md: 14px;
     --radius-lg: 18px;
 
-    --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.06);
+    --shadow-card: 1px 1px 15px -4px black;;
     --shadow-header: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
@@ -266,6 +266,22 @@ header div img {
     margin-top: 16px;
     width: 100%;
     min-width: 0;
+    display: flex;
+    background-color: #f9fafb;
+    justify-content: space-around;
+    border-radius: 20px;
+    box-shadow: -1px 1px 5px 0px black;
+    padding: 20px;
+}
+.audioDiv{
+    width: 40%;
+    padding: 15px;
+    box-shadow: -1px 1px 5px 0px black;
+    border-radius: 30px;
+    background-color: white;
+}
+audio{
+    width: 100%;
 }
 
 /* =======================
@@ -435,6 +451,11 @@ footer {
         min-width: 150px;
         max-width: 180px;
     }
+    .audioDiv{
+        width: 45%;
+        padding: 10px;
+    }
+
 }
 
 /* =======================
@@ -445,7 +466,10 @@ footer {
     body {
         font-size: 14px;
     }
-
+        .audioDiv{
+        width: 100%;
+        padding: 8px;
+    }
     /* محتوای اصلی */
     .bod {
         margin: 20px auto;
@@ -502,6 +526,12 @@ footer {
 
     #sours {
         margin-top: 12px;
+    
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+            padding: 10px;
+
     }
 
     /* فرم */
